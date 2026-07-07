@@ -197,9 +197,16 @@
                     <textarea name="notes" placeholder="예: 마지막에 무료 상담 이벤트 언급, 경쟁사 언급 금지"></textarea>
                 </div>
 
+                <div class="form-group" id="presetGroup" style="display:none">
+                    <label>도입부 프리셋 <span class="opt">(hooks.js에 모아둔 도입부를 자동으로 불러옵니다)</span></label>
+                    <select id="hookPreset">
+                        <option value="">직접 입력</option>
+                    </select>
+                </div>
+
                 <div class="form-group">
                     <label>벤치마킹 도입부 예시 <span class="opt">(선택 · 한 줄에 하나씩)</span></label>
-                    <textarea name="examples" placeholder="잘 터진 영상들의 도입부(훅) 문장을 붙여넣으세요. AI가 공통 구조를 분석해 이 주제에 맞는 도입부·제목·썸네일 문구를 그 패턴으로 만들어줍니다.&#10;예:&#10;- 이거 모르면 월급 300 그냥 버리는 겁니다&#10;- 제가 3년 동안 병원 30곳을 컨설팅하며 알게 된 사실인데요"></textarea>
+                    <textarea name="examples" id="examplesBox" placeholder="잘 터진 영상들의 도입부(훅) 문장을 붙여넣으세요. AI가 공통 구조를 분석해 이 주제에 맞는 도입부·제목·썸네일 문구를 그 패턴으로 만들어줍니다.&#10;예:&#10;- 이거 모르면 월급 300 그냥 버리는 겁니다&#10;- 제가 3년 동안 병원 30곳을 컨설팅하며 알게 된 사실인데요"></textarea>
                     <div class="hint">도입부 예시를 넣으면 → 구조를 일반화한 '도입부 공식'과 그 공식을 적용한 도입부 3가지 버전이 기획안에 포함됩니다.</div>
                 </div>
 
@@ -215,17 +222,46 @@
         </div>
 
         <footer>
-            생성에는 보통 1~3분이 걸립니다 · 결과는 입력한 이메일로 발송됩니다<br>
-            Make.com 무료 플랜 기준 월 약 250건까지 생성 가능
+            생성에는 보통 1~3분이 걸립니다 · 결과는 이메일 발송 + Google Docs 저장<br>
+            Make.com 무료 플랜 기준 월 약 200건까지 생성 가능
         </footer>
     </div>
 
+    <script src="hooks.js"></script>
     <script>
         const WEBHOOK_URL = 'https://hook.eu2.make.com/eolp9h6rnlhb48hcr30sg2h29558iw4d';
 
         const form = document.getElementById('genForm');
         const btn = document.getElementById('submitBtn');
         const result = document.getElementById('result');
+
+        // hooks.js(HOOK_NOTES)가 있으면 [섹션]별로 파싱해 프리셋 드롭다운을 채운다
+        (function initPresets() {
+            if (typeof HOOK_NOTES !== 'string') return;
+            const presets = {};
+            let current = null;
+            for (const raw of HOOK_NOTES.split('\n')) {
+                const line = raw.trim();
+                if (!line) continue;
+                const section = line.match(/^\[(.+)\]$/);
+                if (section) { current = section[1].trim(); presets[current] = []; continue; }
+                if (current) presets[current].push(line.replace(/^-\s*/, ''));
+            }
+            const names = Object.keys(presets).filter(k => presets[k].length);
+            if (!names.length) return;
+            const select = document.getElementById('hookPreset');
+            for (const name of names) {
+                const opt = document.createElement('option');
+                opt.value = name;
+                opt.textContent = name + ' (' + presets[name].length + '개)';
+                select.appendChild(opt);
+            }
+            select.addEventListener('change', () => {
+                const box = document.getElementById('examplesBox');
+                box.value = select.value ? presets[select.value].map(h => '- ' + h).join('\n') : '';
+            });
+            document.getElementById('presetGroup').style.display = '';
+        })();
 
         // 웹훅 → Make HTTP 모듈의 JSON 본문에 값이 그대로 삽입되므로,
         // JSON을 깨뜨리는 문자(큰따옴표·역슬래시·줄바꿈)를 안전한 문자로 치환한다

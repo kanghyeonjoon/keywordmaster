@@ -62,6 +62,32 @@
                 "designer": { "x": 900, "y": 0 },
                 "restore": { "parameters": { "account": { "label": "My Google connection (ekrk5614@gmail.com)" } } }
             }
+        },
+        {
+            "id": 5,
+            "module": "google-docs:createADocument",
+            "version": 1,
+            "parameters": { "__IMTCONN__": 13989955 },
+            "mapper": {
+                "name": "[기획안·대본] {{1.channel}} - {{1.topic}}",
+                "content": "<p><b>📺 채널: {{1.channel}} | 형식: {{1.format}} | 주제: {{1.topic}}</b></p><hr/>{{3.data.content[].text}}",
+                "destination": "drive",
+                "folderId": "/"
+            },
+            "onerror": [
+                {
+                    "id": 6,
+                    "module": "builtin:Ignore",
+                    "version": 1,
+                    "parameters": {},
+                    "mapper": {},
+                    "metadata": { "designer": { "x": 1200, "y": 300 } }
+                }
+            ],
+            "metadata": {
+                "designer": { "x": 1200, "y": 0 },
+                "restore": { "parameters": { "__IMTCONN__": { "label": "My Google connection (ekrk5614@gmail.com)" } } }
+            }
         }
     ],
     "metadata": {
