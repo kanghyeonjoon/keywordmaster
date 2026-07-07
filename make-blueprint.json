@@ -41,19 +41,22 @@
             "id": 3,
             "module": "http:MakeRequest",
             "version": 4,
-            "parameters": { "apiKeyKeychain": 200206, "authenticationType": "apiKey" },
+            "parameters": { "authenticationType": "apiKey", "apiKeyKeychain": 200206 },
             "mapper": {
                 "url": "https://api.anthropic.com/v1/messages",
                 "method": "post",
                 "headers": [
-                    { "name": "anthropic-version", "value": "2023-06-01" },
-                    { "name": "x-api-key", "value": "{{keychains.200206.apiKey}}" },
-                    { "name": "Content-Type", "value": "application/json" }
+                    { "name": "anthropic-version", "value": "2023-06-01" }
                 ],
+                "queryParameters": [],
                 "contentType": "json",
                 "inputMethod": "jsonString",
                 "parseResponse": true,
-                "timeout": "300",
+                "stopOnHttpError": true,
+                "timeout": 300,
+                "allowRedirects": true,
+                "shareCookies": false,
+                "requestCompressedContent": true,
                 "jsonStringBodyContent": "{\"model\":\"claude-sonnet-5\",\"max_tokens\":16000,\"system\":\"당신은 구독자 100만 채널들을 만들어온 10년차 유튜브 콘텐츠 전략가이자 방송 작가입니다. 어떤 분야의 주제든 시청 지속률과 클릭률을 높이는 기획과 대본을 작성합니다. 출력은 이메일 본문에 바로 들어갈 HTML 조각으로만 작성하세요. <h2> <h3> <p> <ul> <ol> <li> <strong> <table> <tr> <th> <td> <hr> <br> 태그만 사용하고, <html> <head> <body> 태그, 마크다운, 코드블록은 절대 사용하지 마세요.\",\"messages\":[{\"role\":\"user\",\"content\":\"아래 영상 정보를 바탕으로 [1부: 기획안]과 [2부: 대본]을 순서대로 작성해주세요.\\n\\n[영상 정보]\\n- 채널명: {{1.channel}}\\n- 분야/업종: {{1.field}}\\n- 영상 형식: {{1.format}}\\n- 주제: {{1.topic}}\\n- 타깃 시청자: {{1.target}}\\n- 목표 길이: {{1.length}}\\n- 톤/스타일: {{1.tone}}\\n- 꼭 들어갈 내용/참고사항: {{1.notes}}\\n- 벤치마킹 도입부 예시(잘 터진 영상들의 도입부): {{1.examples}}\\n(비어 있는 항목은 주제와 분야에 맞게 알아서 최적으로 설정할 것)\\n\\n[1부: 기획안] — <h2>📋 기획안</h2>으로 시작해서 아래 순서대로:\\n1. 제목 후보 5개 (각각 클릭을 유도하는 이유 한 줄 포함)\\n2. 오프닝 훅 전략 (롱폼: 첫 15초 / 숏폼: 첫 3초)\\n3. 타깃 시청자 분석 (누가, 어떤 상황에서, 왜 보는가)\\n4. 영상 구성안 (섹션별 핵심 내용과 시간 배분을 표로)\\n5. 썸네일 문구 후보 3개\\n6. 추천 태그·키워드 10개\\n7. 예상 이탈 포인트와 대응 방법\\n\\n※ 벤치마킹 도입부 예시가 주어진 경우: 먼저 예시들의 공통 구조를 분석해 '도입부 공식'으로 한 줄 정리하고(예: 충격적 숫자 → 통념 반박 → 이익 약속), 그 공식을 이 주제에 적용한 도입부 3가지 버전을 2번 항목에 작성할 것. 제목 후보와 썸네일 문구도 같은 패턴을 반영할 것.\\n\\n[2부: 대본] — <hr><h2>🎬 대본</h2>으로 시작:\\n- 롱폼이면: 기획안 구성안 그대로 인트로 훅(도입부 버전 중 가장 강력한 것) → 섹션별 풀스크립트 → 아웃트로(구독 유도 CTA). 실제로 카메라 앞에서 그대로 읽을 수 있는 구어체 완성 문장으로 쓰고, 섹션마다 (화면/자막 지시)를 괄호로 표시할 것. 분량은 목표 길이 1분당 한글 400~500자 기준.\\n- 숏폼이면: 0~3초 훅 → 본론 → 마지막 CTA 구조, 60초 분량(한글 400~500자), 자막 한 줄 단위로 줄바꿈(<br> 사용).\\n- 대본은 절대 요약하지 말고 처음부터 끝까지 완성된 문장으로 쓸 것.\"}]}"
             },
             "metadata": { "designer": { "x": 600, "y": 0 } }
