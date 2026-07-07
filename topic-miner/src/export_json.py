@@ -21,6 +21,7 @@ OUT_PATH = os.path.join(REPO_ROOT, "data", "vault.json")
 INDUSTRY_LABEL = {
     "dental": "치과", "derma": "피부과",
     "interior": "인테리어", "cancer": "암",
+    "construction": "건설분쟁",
 }
 
 

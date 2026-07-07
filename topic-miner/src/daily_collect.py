@@ -10,6 +10,7 @@ import json
 import os
 import sys
 
+import requests
 import yaml
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -56,6 +57,8 @@ def collect(dry_run: bool = False) -> list[dict]:
     today = dt.date.today().isoformat()
     industries = load_seeds()
     all_rows: list[dict] = []
+    total_seeds = 0
+    yt_failures = 0
 
     for code, ind in industries.items():
         label = ind["label"]
@@ -67,7 +70,13 @@ def collect(dry_run: bool = False) -> list[dict]:
                   else naver.search_trends(ind["seeds"]))
 
         for seed in ind["seeds"]:
-            videos = youtube.load_fixture(seed) if dry_run else youtube.search(seed)
+            total_seeds += 1
+            try:
+                videos = youtube.load_fixture(seed) if dry_run else youtube.search(seed)
+            except requests.RequestException as e:
+                yt_failures += 1
+                print(f"  ⚠ 유튜브 수집 실패({seed}): {e}")
+                videos = []
             questions = naver.load_fixture(seed) if dry_run else naver.search_questions(seed)
             grades = grader.grade(videos)
             candidates.append({
@@ -117,9 +126,16 @@ def collect(dry_run: bool = False) -> list[dict]:
                 "trend": json.dumps(c["_trend"]),
             })
 
+        top_n = int(ind.get("top_n", TOP_N_PER_INDUSTRY))
         rows.sort(key=lambda r: (r["is_sweetspot"] == "TRUE", r["score"]), reverse=True)
-        all_rows.extend(rows[:TOP_N_PER_INDUSTRY])
-        print(f"[{label}] {len(rows)}개 채점 → 상위 {min(len(rows), TOP_N_PER_INDUSTRY)}개 적립 대기")
+        all_rows.extend(rows[:top_n])
+        print(f"[{label}] {len(rows)}개 채점 → 상위 {min(len(rows), top_n)}개 적립 대기")
+
+    # 유튜브 쿼터 소진 등으로 과반 실패 시: 반쪽 데이터로 금고를 오염시키지 않고 건너뛴다
+    if total_seeds and yt_failures > total_seeds / 2:
+        print(f"⚠ 유튜브 수집 {yt_failures}/{total_seeds} 실패 (쿼터 소진 추정) — 오늘 적립을 건너뜁니다. "
+              "쿼터는 매일 오후 4시(KST)에 리셋됩니다.")
+        return []
 
     return all_rows
 
@@ -130,6 +146,10 @@ def main() -> None:
     args = parser.parse_args()
 
     rows = collect(dry_run=args.dry_run)
+
+    if not rows:
+        print("적립할 데이터가 없습니다 — 종료.")
+        return
 
     if args.dry_run:
         out_path = os.path.join(HERE, "dry_run_vault.csv")
