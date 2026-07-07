@@ -4,6 +4,9 @@ on:
   workflow_dispatch:        # 수동 실행 버튼
   schedule:
     - cron: "0 21 * * *"    # UTC 21:00 = KST 06:00
+  push:
+    paths:
+      - ".github/miner-test-trigger"   # 테스트 발사용 (이 파일 수정 시 실행)
 
 jobs:
   collect:
