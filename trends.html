@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 트렌드 대시보드 — 주제·영상·검색추세</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        header { text-align: center; color: white; margin-bottom: 10px; }
+        h1 { font-size: 2.2em; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .subtitle { opacity: 0.9; font-weight: 300; margin-top: 6px; }
+
+        .nav {
+            display: flex; justify-content: center; gap: 10px;
+            margin: 18px 0 24px; flex-wrap: wrap;
+        }
+        .nav a {
+            padding: 9px 18px; border-radius: 20px; text-decoration: none;
+            background: rgba(255,255,255,0.18); color: white; font-weight: 600; font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .nav a.active, .nav a:hover { background: white; color: #5a4b9e; }
+
+        .tabs {
+            display: flex; gap: 8px; justify-content: center;
+            flex-wrap: wrap; margin-bottom: 22px;
+        }
+        .tab {
+            padding: 10px 22px; border-radius: 12px; border: none; cursor: pointer;
+            font-family: 'Pretendard', sans-serif; font-size: 15px; font-weight: 700;
+            background: rgba(255,255,255,0.85); color: #555;
+        }
+        .tab.active { background: #2C3E50; color: white; }
+
+        .meta { text-align: center; color: rgba(255,255,255,0.85); font-size: 13px; margin-bottom: 18px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px; }
+
+        .card {
+            background: #fcfcfb; border-radius: 18px; padding: 20px;
+            box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+            display: flex; flex-direction: column; gap: 12px;
+        }
+
+        .card-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .kw { font-size: 18px; font-weight: 800; color: #222; }
+        .badge {
+            font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 10px;
+            background: #eee; color: #555;
+        }
+        .badge.spot { background: #c0392b; color: white; }
+        .score { margin-left: auto; font-size: 13px; color: #888; font-weight: 600; }
+
+        .reason { font-size: 14px; color: #333; line-height: 1.5; }
+        .questions { font-size: 12.5px; color: #777; line-height: 1.5; }
+
+        .spark-wrap { background: #f4f4fb; border-radius: 12px; padding: 10px 12px 6px; }
+        .spark-title { font-size: 12px; color: #666; font-weight: 600; margin-bottom: 2px; }
+        .spark-empty { font-size: 12px; color: #999; padding: 8px 0; }
+
+        .videos { display: flex; flex-direction: column; gap: 8px; }
+        .video {
+            display: flex; gap: 10px; align-items: center; text-decoration: none;
+            background: #f7f7f7; border-radius: 10px; padding: 6px; color: inherit;
+        }
+        .video:hover { background: #eef1ff; }
+        .video img { width: 96px; height: 54px; object-fit: cover; border-radius: 7px; background: #ddd; flex-shrink: 0; }
+        .v-title { font-size: 13px; font-weight: 600; color: #333; line-height: 1.35;
+                   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .v-meta { font-size: 12px; color: #888; margin-top: 2px; }
+
+        .plan-btn {
+            display: block; text-align: center; padding: 12px; border-radius: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; font-weight: 700; text-decoration: none; font-size: 15px;
+        }
+        .plan-btn:hover { filter: brightness(1.08); }
+
+        .empty {
+            background: white; border-radius: 18px; padding: 50px 30px; text-align: center;
+            color: #666; font-size: 16px; line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 트렌드 대시보드</h1>
+            <p class="subtitle">채굴된 주제를 실제 영상·검색 추세와 함께 보고 바로 기획안으로</p>
+        </header>
+
+        <nav class="nav">
+            <a href="index.html">🧠 키워드 뷰어</a>
+            <a href="script-generator.html">🎬 기획안·대본 생성기</a>
+            <a href="trends.html" class="active">📊 트렌드 대시보드</a>
+        </nav>
+
+        <div class="tabs" id="tabs"></div>
+        <div class="meta" id="meta"></div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" style="display:none"></div>
+    </div>
+
+    <script>
+        const INDUSTRIES = { all: '전체', dental: '치과', derma: '피부과', interior: '인테리어', cancer: '암' };
+        const FIELD_NAME = { dental: '치과', derma: '피부과', interior: '인테리어(맞춤가구)', cancer: '암' };
+        let DATA = null;
+        let current = 'all';
+
+        function fmtViews(n) {
+            if (n >= 10000) return (n / 10000).toFixed(n >= 100000 ? 0 : 1) + '만회';
+            return n.toLocaleString() + '회';
+        }
+
+        // 단일 시리즈 13주 스파크라인 (2px 라인 + 끝점 도트·값 라벨)
+        function sparkline(values) {
+            if (!values || values.length < 2) {
+                return '<div class="spark-empty">추세 데이터 없음 — 네이버 앱에 데이터랩(검색어트렌드) API를 추가하면 표시됩니다</div>';
+            }
+            const W = 280, H = 56, PAD = 6, LABEL_W = 34;
+            const max = Math.max(...values, 1), min = Math.min(...values, 0);
+            const x = i => PAD + i * ((W - PAD * 2 - LABEL_W) / (values.length - 1));
+            const y = v => H - PAD - ((v - min) / (max - min || 1)) * (H - PAD * 2);
+            const pts = values.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+            const lx = x(values.length - 1), ly = y(values[values.length - 1]);
+            return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="최근 ${values.length}주 검색 추세">
+                <title>최근 ${values.length}주 검색 추세 (상대비율): ${values.join(', ')}</title>
+                <polyline points="${pts}" fill="none" stroke="#667eea" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                <circle cx="${lx}" cy="${ly}" r="3.5" fill="#667eea"/>
+                <text x="${lx + 7}" y="${Math.min(Math.max(ly + 4, 12), H - 4)}" font-size="11" font-weight="700" fill="#555">${values[values.length - 1]}</text>
+            </svg>`;
+        }
+
+        function planLink(t) {
+            const notes = ('클릭이유 초벌: ' + (t.click_reason || '') + ' / 반복질문: ' + (t.naver_questions || '')).slice(0, 300);
+            return 'script-generator.html?' + new URLSearchParams({
+                topic: t.keyword, field: FIELD_NAME[t.industry] || t.industry, mode: '기획안만', notes
+            }).toString();
+        }
+
+        function videoRow(v) {
+            const url = 'https://www.youtube.com/watch?v=' + v.id;
+            const thumb = 'https://img.youtube.com/vi/' + v.id + '/mqdefault.jpg';
+            return `<a class="video" href="${url}" target="_blank" rel="noopener">
+                <img src="${thumb}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+                <div><div class="v-title"></div><div class="v-meta">${fmtViews(v.v)} · ${v.d}일 전</div></div>
+            </a>`;
+        }
+
+        function render() {
+            const grid = document.getElementById('grid');
+            const empty = document.getElementById('empty');
+            grid.innerHTML = '';
+            const topics = (DATA.topics || [])
+                .filter(t => current === 'all' || t.industry === current)
+                .sort((a, b) => (b.is_sweetspot - a.is_sweetspot) || (b.score - a.score));
+
+            if (!topics.length) {
+                empty.style.display = '';
+                empty.innerHTML = '아직 데이터가 없습니다.<br>매일 06:00 수집 후 자동으로 채워집니다.';
+                return;
+            }
+            empty.style.display = 'none';
+
+            for (const t of topics) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="card-head">
+                        <span class="kw"></span>
+                        ${t.is_sweetspot ? '<span class="badge spot">🎯 명당</span>' : ''}
+                        <span class="badge">화제성 ${t.buzz_grade}</span>
+                        <span class="badge">파워 ${t.power_grade}</span>
+                        <span class="score">${t.score}점 · ${INDUSTRIES[t.industry] || t.industry}</span>
+                    </div>
+                    <div class="reason"></div>
+                    <div class="questions"></div>
+                    <div class="spark-wrap"><div class="spark-title">검색 추세 (최근 13주 · 상대비율)</div>${sparkline(t.trend)}</div>
+                    <div class="videos"></div>
+                    <a class="plan-btn" href="${planLink(t)}" target="_blank">🎬 이 주제로 기획안 만들기</a>`;
+                card.querySelector('.kw').textContent = t.keyword;
+                card.querySelector('.reason').textContent = '💡 ' + (t.click_reason || '');
+                card.querySelector('.questions').textContent = '🗣 ' + (t.naver_questions || '');
+                const vids = card.querySelector('.videos');
+                for (const v of (t.ref_videos || []).slice(0, 3)) {
+                    vids.insertAdjacentHTML('beforeend', videoRow(v));
+                    vids.lastElementChild.querySelector('.v-title').textContent = v.t;
+                }
+                grid.appendChild(card);
+            }
+        }
+
+        function renderTabs() {
+            const tabs = document.getElementById('tabs');
+            tabs.innerHTML = '';
+            for (const [code, label] of Object.entries(INDUSTRIES)) {
+                const b = document.createElement('button');
+                b.className = 'tab' + (code === current ? ' active' : '');
+                b.textContent = label;
+                b.onclick = () => { current = code; renderTabs(); render(); };
+                tabs.appendChild(b);
+            }
+        }
+
+        fetch('data/vault.json?t=' + Date.now())
+            .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(d => {
+                DATA = d;
+                document.getElementById('meta').textContent = '마지막 갱신: ' + (d.generated_at || '-') + ' · 최근 14일 · 명당 우선 정렬';
+                renderTabs();
+                render();
+            })
+            .catch(() => {
+                document.getElementById('empty').style.display = '';
+                document.getElementById('empty').innerHTML =
+                    '데이터 파일(data/vault.json)이 아직 없습니다.<br>다음 자동 수집(매일 06:00) 후 이 화면이 채워집니다.';
+            });
+    </script>
+</body>
+</html>

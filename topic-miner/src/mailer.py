@@ -27,23 +27,48 @@ def plan_link(row: dict) -> str:
     return f"{PAGES_BASE}/script-generator.html?{urllib.parse.urlencode(params)}"
 
 
+def _videos_html(row: dict) -> str:
+    """대표 영상 2~3개를 제목(링크)·조회수·경과일로 나열."""
+    import json as _json
+
+    try:
+        videos = _json.loads(row.get("ref_videos") or "[]")
+    except (ValueError, TypeError):
+        videos = []
+    if not videos:
+        return f" · <a href='{row['ref_url']}'>참고영상</a>" if row.get("ref_url") else ""
+    items = []
+    for v in videos[:3]:
+        views = v.get("v", 0)
+        views_txt = f"{views/10000:.1f}만회" if views >= 10000 else f"{views:,}회"
+        items.append(
+            f"<li><a href='https://www.youtube.com/watch?v={v.get('id','')}'>"
+            f"{str(v.get('t',''))[:60]}</a> — {views_txt} · {v.get('d','?')}일 전</li>"
+        )
+    return "<ul style='margin:4px 0 0 0;font-size:13px'>" + "".join(items) + "</ul>"
+
+
 def render_digest(by_industry: dict[str, list[dict]], date_str: str, sheet_id: str = "") -> str:
-    """주간 메일 HTML 렌더링 (PRD 11절 + 기획안 링크)."""
-    parts = [f"<h2>📬 이번 주 명당 주제 — {date_str}</h2>"]
+    """주간 메일 HTML 렌더링 (PRD 11절 + 기획안 링크 + 대표 영상)."""
+    parts = [
+        f"<h2>📬 이번 주 명당 주제 — {date_str}</h2>",
+        f"<p><a href='{PAGES_BASE}/trends.html' style='font-weight:700;color:#667eea'>"
+        "📊 트렌드 대시보드에서 영상·검색추세와 함께 보기</a></p>",
+    ]
     for code, rows in by_industry.items():
         label = INDUSTRY_FIELD.get(code, code)
         parts.append(f"<h3>■ {label}</h3><ol>")
         for r in rows:
             spot = " <b style='color:#c0392b'>[명당]</b>" if str(r.get("is_sweetspot")).upper() == "TRUE" else ""
-            ref = f" · <a href='{r['ref_url']}'>참고영상</a>" if r.get("ref_url") else ""
             parts.append(
-                "<li style='margin-bottom:14px'>"
+                "<li style='margin-bottom:16px'>"
                 f"<b>{r.get('keyword','')}</b>{spot}<br/>"
                 f"화제성 {r.get('buzz_grade','')} / 콘텐츠파워 {r.get('power_grade','')}"
                 f" · 점수 {r.get('score','')}<br/>"
                 f"반복질문: {str(r.get('naver_questions',''))[:120]}<br/>"
                 f"클릭이유(초벌): {r.get('click_reason','')}<br/>"
-                f"<a href='{plan_link(r)}' style='color:#667eea;font-weight:700'>▶ 이 주제로 기획안 만들기</a>{ref}"
+                f"<a href='{plan_link(r)}' style='color:#667eea;font-weight:700'>▶ 이 주제로 기획안 만들기</a>"
+                f"{_videos_html(r)}"
                 "</li>"
             )
         parts.append("</ol>")

@@ -6,6 +6,7 @@
 import argparse
 import csv
 import datetime as dt
+import json
 import os
 import sys
 
@@ -61,6 +62,10 @@ def collect(dry_run: bool = False) -> list[dict]:
         medical = bool(ind.get("medical_ad_law", False))
         candidates = []
 
+        # 데이터랩 검색추세 (업종당 1콜, 미신청·실패 시 빈 dict)
+        trends = (naver.load_trend_fixture(ind["seeds"]) if dry_run
+                  else naver.search_trends(ind["seeds"]))
+
         for seed in ind["seeds"]:
             videos = youtube.load_fixture(seed) if dry_run else youtube.search(seed)
             questions = naver.load_fixture(seed) if dry_run else naver.search_questions(seed)
@@ -74,6 +79,8 @@ def collect(dry_run: bool = False) -> list[dict]:
                 "buzz_grade": grades["buzz_grade"],
                 "questions": questions,
                 "_top_video": grades["top_video"],
+                "_top3_videos": sorted(videos, key=lambda v: v["view_count"], reverse=True)[:3],
+                "_trend": trends.get(seed, []),
             })
 
         rank = scorer.mock_rank_and_translate if dry_run else scorer.rank_and_translate
@@ -102,6 +109,12 @@ def collect(dry_run: bool = False) -> list[dict]:
                 "score": s.get("score", 0),
                 "click_reason": s.get("click_reason", ""),
                 "ref_url": (c["_top_video"] or {}).get("url", ""),
+                "ref_videos": json.dumps([
+                    {"t": v["title"], "id": v["video_id"],
+                     "v": v["view_count"], "d": v["days_since_upload"]}
+                    for v in c["_top3_videos"]
+                ], ensure_ascii=False),
+                "trend": json.dumps(c["_trend"]),
             })
 
         rows.sort(key=lambda r: (r["is_sweetspot"] == "TRUE", r["score"]), reverse=True)

@@ -6,6 +6,8 @@ COLUMNS = [
     "date", "industry", "seed", "keyword", "demand", "comp",
     "power_grade", "buzz_grade", "is_sweetspot", "naver_questions",
     "score", "click_reason", "ref_url",
+    "ref_videos",  # 대표 영상 3개 [{"t":제목,"id":video_id,"v":조회수,"d":경과일}] JSON
+    "trend",       # 주간 검색 상대비율 13개 [3,5,...] JSON (데이터랩)
 ]
 WORKSHEET = "vault"
 
@@ -34,8 +36,12 @@ def _worksheet():
     except Exception:
         ws = book.add_worksheet(title=WORKSHEET, rows=1000, cols=len(COLUMNS))
         ws.append_row(COLUMNS)
-    if not ws.row_values(1):
+    header = ws.row_values(1)
+    if not header:
         ws.append_row(COLUMNS)
+    elif len(header) < len(COLUMNS):
+        # 스키마 확장 시 헤더(1행)만 연장 — 데이터 행은 건드리지 않는다
+        ws.update(range_name="A1", values=[COLUMNS])
     return ws
 
 
