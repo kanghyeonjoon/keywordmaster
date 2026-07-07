@@ -59,7 +59,7 @@ def main() -> None:
         return
 
     by_industry = pick_top(rows)
-    html = mailer.render_digest(by_industry, date_str, os.environ.get("SHEET_ID", ""))
+    html = mailer.render_digest(by_industry, date_str, os.environ.get("SHEET_ID", "").strip())
     subject = f"[주간 주제] 이번 주 명당 20개 — {date_str}"
 
     if args.dry_run:
