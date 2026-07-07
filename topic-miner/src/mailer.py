@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 # 기획안 생성기(폼) 주소 — GitHub Pages 활성화 후 사용
 PAGES_BASE = os.environ.get(
     "PAGES_BASE_URL", "https://kanghyeonjoon.github.io/keywordmaster"
-)
+).strip()
 
 INDUSTRY_FIELD = {
     "dental": "치과", "derma": "피부과",
@@ -56,9 +56,9 @@ def render_digest(by_industry: dict[str, list[dict]], date_str: str, sheet_id: s
 
 
 def send(subject: str, html: str) -> None:
-    sender = os.environ.get("GMAIL_SENDER", "ekrk5614@gmail.com")
-    password = os.environ.get("GMAIL_APP_PASSWORD", "")
-    to = os.environ.get("DIGEST_TO", sender)
+    sender = os.environ.get("GMAIL_SENDER", "ekrk5614@gmail.com").strip()
+    password = os.environ.get("GMAIL_APP_PASSWORD", "").strip()
+    to = os.environ.get("DIGEST_TO", sender).strip()
     if not password:
         raise RuntimeError("GMAIL_APP_PASSWORD 환경변수가 없습니다.")
 

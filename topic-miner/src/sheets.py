@@ -14,7 +14,7 @@ def _client():
     import gspread
     from google.oauth2.service_account import Credentials
 
-    sa_json = os.environ.get("GOOGLE_SA_JSON", "")
+    sa_json = os.environ.get("GOOGLE_SA_JSON", "").strip()
     if not sa_json:
         raise RuntimeError("GOOGLE_SA_JSON 환경변수가 없습니다.")
     creds = Credentials.from_service_account_info(
@@ -25,7 +25,7 @@ def _client():
 
 
 def _worksheet():
-    sheet_id = os.environ.get("SHEET_ID", "")
+    sheet_id = os.environ.get("SHEET_ID", "").strip()
     if not sheet_id:
         raise RuntimeError("SHEET_ID 환경변수가 없습니다.")
     book = _client().open_by_key(sheet_id)

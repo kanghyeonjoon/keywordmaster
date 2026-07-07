@@ -9,7 +9,7 @@ TIMEOUT = 20
 
 
 def _key() -> str:
-    key = os.environ.get("YOUTUBE_API_KEY", "")
+    key = os.environ.get("YOUTUBE_API_KEY", "").strip()
     if not key:
         raise RuntimeError("YOUTUBE_API_KEY 환경변수가 없습니다.")
     return key

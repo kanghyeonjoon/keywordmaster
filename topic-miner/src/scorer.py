@@ -9,7 +9,7 @@ import re
 import requests
 
 API_URL = "https://api.anthropic.com/v1/messages"
-MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
+MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5").strip()
 TIMEOUT = 120
 
 
@@ -56,7 +56,7 @@ def rank_and_translate(candidates: list[dict], medical_ad_law: bool = False) -> 
     candidates 항목: seed, videos(제목·조회수 요약), demand_signal, comp_signal,
                      power_grade, buzz_grade, questions
     """
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not api_key:
         raise RuntimeError("ANTHROPIC_API_KEY 환경변수가 없습니다.")
 
