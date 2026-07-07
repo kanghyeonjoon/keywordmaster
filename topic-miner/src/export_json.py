@@ -34,8 +34,9 @@ def _parse_json_field(value, default):
 
 def build(rows: list[dict]) -> dict:
     topics = []
-    for r in rows:
+    for idx, r in enumerate(rows):
         topics.append({
+            "_idx": idx,  # 시트 append 순서 = 최신성 보조 키 (같은 날짜 내 중복 제거용)
             "date": str(r.get("date", "")),
             "industry": r.get("industry", ""),
             "keyword": r.get("keyword", ""),
@@ -48,14 +49,15 @@ def build(rows: list[dict]) -> dict:
             "ref_videos": _parse_json_field(r.get("ref_videos"), []),
             "trend": _parse_json_field(r.get("trend"), []),
         })
-    # 최신 날짜 우선, 같은 키워드는 최신 것만
-    topics.sort(key=lambda t: t["date"], reverse=True)
+    # 최신 날짜 우선(같은 날짜면 나중에 적립된 행 우선), 같은 키워드는 최신 것만
+    topics.sort(key=lambda t: (t["date"], t["_idx"]), reverse=True)
     seen, unique = set(), []
     for t in topics:
         key = (t["industry"], t["keyword"])
         if key in seen:
             continue
         seen.add(key)
+        t.pop("_idx", None)
         unique.append(t)
     return {
         "generated_at": dt.datetime.now().strftime("%Y-%m-%d %H:%M"),
