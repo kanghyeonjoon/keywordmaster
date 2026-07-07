@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-07 09:51",
+ "generated_at": "2026-07-07 09:56",
  "labels": {
   "dental": "치과",
   "derma": "피부과",
@@ -9,223 +9,66 @@
  "topics": [
   {
    "date": "2026-07-07",
-   "industry": "dental",
-   "keyword": "임플란트 부작용",
-   "power_grade": "B",
-   "buzz_grade": "S",
-   "is_sweetspot": true,
-   "score": 80,
-   "click_reason": "시술 후 나타날 수 있는 부작용 종류와 자신의 상황(당뇨, 흡연 등)에서의 주의사항이 궁금해서 검색함",
-   "naver_questions": "부작용 종류, 알레르기·기저질환 관련 위험, 실제 후기를 묻는 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "dental",
-   "keyword": "임플란트 비용",
-   "power_grade": "C",
-   "buzz_grade": "A",
-   "is_sweetspot": true,
-   "score": 70,
-   "click_reason": "치과마다 다른 임플란트 가격대와 대략적인 예산 기준을 미리 확인하고 싶어서 검색함",
-   "naver_questions": "임플란트 비용이 어느 정도인지, 지역·치과별 가격 차이와 보험 적용 기준을 묻는 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "dental",
-   "keyword": "임플란트 통증",
-   "power_grade": "C",
-   "buzz_grade": "A",
-   "is_sweetspot": true,
-   "score": 68,
-   "click_reason": "시술 후 통증이 실제로 얼마나 심하고 언제까지 지속되는지 걱정되어 확인하려는 목적",
-   "naver_questions": "통증 정도와 지속 기간, 통증이 적은 치과를 찾는 지역 기반 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "dental",
-   "keyword": "임플란트 수명",
-   "power_grade": "C",
-   "buzz_grade": "B",
-   "is_sweetspot": false,
-   "score": 55,
-   "click_reason": "임플란트를 얼마나 오래 쓸 수 있는지와 수명을 늘리는 관리 방법이 궁금해서 검색함",
-   "naver_questions": "평균 수명과 수명을 늘리는 방법, 지역별 치과 관련 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "dental",
-   "keyword": "임플란트 재수술",
-   "power_grade": "D",
-   "buzz_grade": "C",
-   "is_sweetspot": false,
-   "score": 35,
-   "click_reason": "임플란트가 흔들리거나 오래되어 재수술이 필요한 상황인지, 원인과 비용이 궁금해서 검색함",
-   "naver_questions": "재수술 원인·비용, 흔들림 증상 시 재수술 필요 여부를 묻는 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "derma",
-   "keyword": "실리프팅 효과와 부작용",
-   "power_grade": "B",
-   "buzz_grade": "A",
-   "is_sweetspot": true,
-   "score": 74,
-   "click_reason": "처짐 개선 효과와 부작용·회복 기간이 궁금해 시술 전 병원 선택 정보를 찾는 경우가 많음",
-   "naver_questions": "효과/부작용/붓기/병원 선택 관련 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "derma",
-   "keyword": "안티에이징 시술과 화장품 비교",
-   "power_grade": "A",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 88,
-   "click_reason": "몇 살부터 관리를 시작해야 하는지, 화장품과 시술의 차이가 궁금해 정보를 찾는 경우가 많음",
-   "naver_questions": "시작 시기/제품 성분 비교/시술 병행 여부 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "derma",
-   "keyword": "필러 부위별 부작용 사례",
-   "power_grade": "A",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 86,
-   "click_reason": "입술, 눈밑, 코 등 부위별 부작용 사례와 안전성을 확인하려는 질문이 많음",
-   "naver_questions": "부위별 부작용 사례/안전성 확인 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "derma",
-   "keyword": "3040 피부관리 루틴",
-   "power_grade": "A",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 76,
-   "click_reason": "연령대별 화장품 사용 순서와 관리 루틴, 시술 병행 여부를 묻는 질문이 반복됨",
-   "naver_questions": "화장품 추천/관리 루틴/시술 병행 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "derma",
-   "keyword": "모공 축소 관리법",
-   "power_grade": "C",
-   "buzz_grade": "C",
-   "is_sweetspot": false,
-   "score": 48,
-   "click_reason": "관리해도 효과가 없다는 불만과 부위별 효과적인 관리법을 찾는 질문이 반복됨",
-   "naver_questions": "효과 없음/추천 시술/부위별 관리법 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "interior",
-   "keyword": "원목 vs 필름 시공 비교",
-   "power_grade": "S",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 95,
-   "click_reason": "원목·필름·시트지 등 유사 마감재 간 장단점과 관리 방법을 비교하고 싶어 클릭한다",
-   "naver_questions": "원목 vs 필름, 강마루 vs 강화마루 등 자재 비교와 관리 방법에 대한 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "interior",
-   "keyword": "수납 인테리어 아이디어",
-   "power_grade": "S",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 93,
-   "click_reason": "좁은 공간을 효율적으로 정리할 수 있는 수납 인테리어 사례와 아이디어를 찾고 싶어 클릭한다",
-   "naver_questions": "저렴하고 실용적인 수납 인테리어 사례, 공간별(베란다·거실·주방) 정리 아이디어 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "interior",
-   "keyword": "붙박이장 시공 비용",
-   "power_grade": "A",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 88,
-   "click_reason": "붙박이장 설치 비용과 적절한 시공 시점, 기존 붙박이장 철거·보수 방법이 궁금해 클릭한다",
-   "naver_questions": "설치 비용, 시공 타이밍(입주 전후), 철거·보수 방법에 대한 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "interior",
-   "keyword": "인테리어 마감소재 추천",
-   "power_grade": "A",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 85,
-   "click_reason": "친환경·천연 소재를 활용한 마감재 선택 기준과 공간별 추천 소재가 궁금해 클릭한다",
-   "naver_questions": "친환경/천연 소재 선택 기준, 공간별(욕실·주방·거실) 마감재 추천 질문이 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "interior",
-   "keyword": "맞춤가구 업체 추천",
-   "power_grade": "D",
-   "buzz_grade": "B",
-   "is_sweetspot": false,
-   "score": 40,
-   "click_reason": "지역별로 잘하는 맞춤가구 업체를 찾고 아이방·학생방 등 특정 공간용 제작 방법을 알고 싶어 클릭한다",
-   "naver_questions": "잘하는 곳/업체 추천, 아이방·학생방 맞춤가구 제작 방법 문의가 반복됨",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
    "industry": "cancer",
    "keyword": "항암 부작용 관리",
-   "power_grade": "B",
+   "power_grade": "A",
    "buzz_grade": "B",
    "is_sweetspot": false,
-   "score": 79,
-   "click_reason": "항암치료 중 탈모·설사·통증 등 부작용을 집에서 스스로 관리하기 힘들어 구체적 대처 정보를 찾는 질문 패턴",
-   "naver_questions": "위암·폐암·유방암·난소암 등 암종별 항암 부작용 관리법과 지속기간 문의 다수",
-   "ref_videos": [],
+   "score": 65,
+   "click_reason": "항암치료 중 겪는 탈모·저림·설사 등 부작용을 집에서 어떻게 관리할 수 있는지 실질적 정보를 찾음",
+   "naver_questions": "위암·유방암·난소암 등에서 항암 부작용을 집에서 관리하기 힘들다는 질문이 반복됨",
+   "ref_videos": [
+    {
+     "t": "서울대병원에서 알려주는 항암제 부작용 및 관리방법",
+     "id": "3oanT82S4FM",
+     "v": 402866,
+     "d": 2451
+    },
+    {
+     "t": "항암제 치료 후 말초신경병증 관리_국립암센터",
+     "id": "KRkx8soCZ4k",
+     "v": 315838,
+     "d": 2216
+    },
+    {
+     "t": "[PEOPLE in 세브란스] 몸이 보내는 항암부작용 신호 네 가지~",
+     "id": "8il4h5vqaZQ",
+     "v": 167569,
+     "d": 2360
+    }
+   ],
    "trend": []
   },
   {
    "date": "2026-07-07",
    "industry": "cancer",
-   "keyword": "암환자 식단",
+   "keyword": "암환자 식단 관리",
    "power_grade": "A",
-   "buzz_grade": "A",
+   "buzz_grade": "S",
    "is_sweetspot": false,
-   "score": 66,
-   "click_reason": "매일 식단을 어떻게 구성해야 할지 막막하여 구체적 식재료·배달 서비스 정보를 찾는 질문 패턴",
-   "naver_questions": "암환자 식단 구성, 영양식 배달, 식욕부진 대처 관련 질문 다수",
-   "ref_videos": [],
+   "score": 68,
+   "click_reason": "항암 중이거나 수술 후 어떤 음식을 챙겨 먹어야 하는지 구체적인 식단 정보를 얻고자 검색함",
+   "naver_questions": "암환자 식단을 집에서 매일 챙기기 어렵다는 질문과 추천 식재료 문의가 반복됨",
+   "ref_videos": [
+    {
+     "t": "암 환자 음식, 이걸 먹어야 암을 이겨냅니다 (암세포가 싫어하는 10가지 음식)",
+     "id": "_O8xHUOmTdo",
+     "v": 1506810,
+     "d": 823
+    },
+    {
+     "t": "항암치료 할 때 먹으면 좋은 음식 [의사결정] #shorts",
+     "id": "tpyP-ZnD9wk",
+     "v": 448613,
+     "d": 924
+    },
+    {
+     "t": "암환자 식단, 암환자 음식, 항암중 식단, 항암중 음식",
+     "id": "Ovll0Mu5gn0",
+     "v": 31020,
+     "d": 244
+    }
+   ],
    "trend": []
   },
   {
@@ -235,66 +78,251 @@
    "power_grade": "S",
    "buzz_grade": "S",
    "is_sweetspot": false,
-   "score": 64,
-   "click_reason": "갑상선암·대장암·유방암 등 암종별로 수술 후 무엇을, 어떻게 관리해야 하는지 구체적 정보를 찾는 질문 패턴",
-   "naver_questions": "암종별 수술 후 관리 방법, 요양병원 선택 기준, 면역·대사 관리 관련 질문 다수",
-   "ref_videos": [],
+   "score": 72,
+   "click_reason": "수술 후 각 암종별로 일상에서 어떻게 몸 상태를 관리하고 회복을 도울 수 있는지 정보가 궁금해서 검색함",
+   "naver_questions": "갑상선암·대장암·유방암 등 수술 후 관리법을 묻는 질문이 반복됨",
+   "ref_videos": [
+    {
+     "t": "전이된 암 환자를 마주한 의사의 반응은? #의학다큐",
+     "id": "fkFgHT3dA0M",
+     "v": 11685252,
+     "d": 445
+    },
+    {
+     "t": "암 예방을 위한 1가지 음식 #암 #cancer #암예방",
+     "id": "kOJhFLbRbgo",
+     "v": 806944,
+     "d": 826
+    },
+    {
+     "t": "[아침마당] 암, 이렇게만 하면 오래 살 수 있다?? 암 관리하는 방법 TOP 5✋ | 서울대 암 연구소장 송용상 | KBS 2013.11.21",
+     "id": "RcQau-oHCEg",
+     "v": 25087,
+     "d": 342
+    }
+   ],
    "trend": []
   },
   {
    "date": "2026-07-07",
    "industry": "cancer",
-   "keyword": "암 수술 후 회복",
+   "keyword": "암 수술 후 회복 기간",
    "power_grade": "S",
    "buzz_grade": "S",
    "is_sweetspot": false,
-   "score": 62,
-   "click_reason": "암종별 수술 후 회복 기간과 회복 프로그램 정보를 확인하려는 질문 패턴",
-   "naver_questions": "간암·위암·자궁경부암 등 회복 기간, 요양병원 회복 프로그램 문의 다수",
-   "ref_videos": [],
+   "score": 75,
+   "click_reason": "수술 후 회복까지 걸리는 기간과 그 과정에서 필요한 관리 정보를 확인하고자 검색함",
+   "naver_questions": "위암·대장암·자궁경부암 등에서 수술 후 회복 기간을 묻는 질문이 반복됨",
+   "ref_videos": [
+    {
+     "t": "전이된 암 환자를 마주한 의사의 반응은? #의학다큐",
+     "id": "fkFgHT3dA0M",
+     "v": 11685252,
+     "d": 445
+    },
+    {
+     "t": "항암치료 부작용? '이때'부터가 중요해요 #건강 #암 #항암",
+     "id": "QEx9xCPL0BY",
+     "v": 686290,
+     "d": 690
+    },
+    {
+     "t": "항암제의 진화 과정",
+     "id": "G2U9CRST6vo",
+     "v": 289359,
+     "d": 724
+    }
+   ],
    "trend": []
   },
   {
    "date": "2026-07-07",
    "industry": "cancer",
    "keyword": "암 한방치료 병행",
-   "power_grade": "S",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 60,
-   "click_reason": "항암치료와 한방치료를 함께 진행해도 되는지, 비용과 관리 방향을 확인하려는 질문 패턴",
-   "naver_questions": "유방암·혈액암 등 한방병원 병행 가능 여부, 비용, 회복 관리 상담 문의 다수",
-   "ref_videos": [],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "derma",
-   "keyword": "안티에이징 관리 시작 시기",
    "power_grade": "A",
    "buzz_grade": "S",
    "is_sweetspot": false,
    "score": 88,
-   "click_reason": "몇 살부터 안티에이징 관리를 시작해야 하는지, 성분·제품 비교 정보가 궁금해서 검색한다",
-   "naver_questions": "시작 시기·성분(EGF)·크림 비교·시술 관련 질문 반복",
+   "click_reason": "기존 암 치료와 한방치료를 함께 진행해도 되는지, 회복에 도움이 되는지 정보 비교를 위해 검색함",
+   "naver_questions": "유방암·혈액암 등에서 한방치료 병행 가능 여부와 비용을 묻는 질문이 반복됨",
    "ref_videos": [
     {
-     "t": "\"얼굴 노화 10년 막습니다.\" 시술 없이 젊어지는 가장 간단한 방법 (피부과 안지수 원장) | IOPE L.A.B.",
-     "id": "UxWmcFeLTwM",
-     "v": 834112,
-     "d": 803
+     "t": "의사들은 이런걸 왜 물어볼까 #암치료",
+     "id": "Hg-R1hnHvMc",
+     "v": 1561526,
+     "d": 865
     },
     {
-     "t": "매년 27억 투자하는 억만장자의 안티에이징 식단 #안티에이징 #저속노화 #건강식단",
-     "id": "4va_BLtWkdM",
-     "v": 397802,
-     "d": 346
+     "t": "\"항암 치료비가 얼마나 나올까?\"....첫 항암 비용을 결제한 닥터 황진희의 이야기#항암치료#암치료비용#카드한도",
+     "id": "1ssO_YAXjO0",
+     "v": 67675,
+     "d": 561
     },
     {
-     "t": "피부과 전문의가 말하는 4가지 안티에이징 시술 #항노화시술",
-     "id": "EQKrjpeOoWo",
-     "v": 11978,
-     "d": 431
+     "t": "[암 치료 전략] 한방병원에서 암치료를 받는 것은 어떤가요? - 류영석 원장",
+     "id": "Rv5Xas-gUbc",
+     "v": 11519,
+     "d": 3640
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "인테리어 자재 고르는 법",
+   "power_grade": "A",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 80,
+   "click_reason": "친환경·아토피 등 건강을 고려한 소재 선택과 마감재 비교 정보를 얻으려는 목적",
+   "naver_questions": "친환경·아토피 관련 소재 고민과 공간별(주방·거실) 마감재 선택 질문이 반복됨",
+   "ref_videos": [
+    {
+     "t": "퀄리티 올리는 인테리어 자재 TOP3 #인테리어팁 #리모델링 #인테리어",
+     "id": "LcmBYaQFxtQ",
+     "v": 711165,
+     "d": 302
+    },
+    {
+     "t": "요즘 제일 핫한 마감재 추천!🏡 예쁜 집 벽면은 다 이걸로 마감 했더라구요🤫 친환경은 기본이고 디테일 미친 질감 표현력까지!✨ #거실벽인테리어 #벽면마감재추천",
+     "id": "73dz_nBdsU0",
+     "v": 233096,
+     "d": 519
+    },
+    {
+     "t": "셀프인테리어의 지존이 나타났다 ㅣ 바닥에서 천장까지 줄눈없이 한번에 시공?",
+     "id": "rekPQ3b8NwQ",
+     "v": 39685,
+     "d": 378
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "붙박이장 비용 및 설치",
+   "power_grade": "A",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 83,
+   "click_reason": "붙박이장 설치·철거 비용과 시공 시점(입주 전후)에 대한 실질적 정보를 얻으려는 목적",
+   "naver_questions": "설치·철거 비용, 시공 타이밍(입주 전후), 자재 교체 관련 질문이 반복됨",
+   "ref_videos": [
+    {
+     "t": "예쁜 붙박이장 싸게 사는 방법 | 🏡인테리어SHOW",
+     "id": "Eu50q-7BfZw",
+     "v": 1041237,
+     "d": 2194
+    },
+    {
+     "t": "해외에선 다 이거해요 #이케아 #가구인테리어 #붙박이장 #옷장",
+     "id": "OGzLEnWtWP8",
+     "v": 715457,
+     "d": 404
+    },
+    {
+     "t": "인테리어 업자가 말하는 붙박이장 꿀팁",
+     "id": "HI3wI6j1Xkg",
+     "v": 319813,
+     "d": 1033
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "수납 인테리어 공간활용",
+   "power_grade": "S",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 87,
+   "click_reason": "좁은 공간에서 효율적으로 수납을 정리하는 아이디어와 사례를 참고하려는 목적",
+   "naver_questions": "베란다·거실 등 특정 공간의 수납 인테리어 문의와 정리 사례 공유 질문이 반복됨",
+   "ref_videos": [
+    {
+     "t": "이케아 수납장 위에 이걸 올리세요💙 #이케아추천템 #이케아에케트 #거실수납장 #거실인테리어 #작은집인테리어 #살림추천템 #이케아책상 #이케아화장대",
+     "id": "UU8CJwjd9Js",
+     "v": 5689962,
+     "d": 488
+    },
+    {
+     "t": "안방 이케아 수납장의 대변신💛",
+     "id": "N4sDoZ2OVw0",
+     "v": 2492460,
+     "d": 457
+    },
+    {
+     "t": "주방 인테리어 적용 가능",
+     "id": "kNTlQ_JtqrI",
+     "v": 771288,
+     "d": 1046
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "원목 vs 필름 비교",
+   "power_grade": "S",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 89,
+   "click_reason": "원목과 필름(시트지) 중 어떤 마감이 내구성과 관리 면에서 더 나은지 비교하려는 목적",
+   "naver_questions": "원목vs필름, 강마루vs강화마루 등 소재 비교형 질문이 반복적으로 나타남",
+   "ref_videos": [
+    {
+     "t": "고객님이 기성문짝 달아놓은줄아셨대요/인테리어필름시공",
+     "id": "Pg-J0PmtZfU",
+     "v": 6584337,
+     "d": 1168
+    },
+    {
+     "t": "살아보니 후회하는 인테리어 3가지 ! 안보면 후회🌚 #shorts",
+     "id": "n24UFlMDc4M",
+     "v": 4749754,
+     "d": 793
+    },
+    {
+     "t": "원목식탁 절대 사면 안되는 이유❗️",
+     "id": "PstHO19FlsA",
+     "v": 2383867,
+     "d": 343
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "맞춤가구 잘하는곳",
+   "power_grade": "C",
+   "buzz_grade": "S",
+   "is_sweetspot": true,
+   "score": 42,
+   "click_reason": "아이방·학생방 등 특정 공간에 맞는 맞춤가구 제작업체를 찾고 비교하려는 목적",
+   "naver_questions": "잘하는 업체 추천 요청과 아이방·학생방 등 특정 공간용 맞춤가구 제작 문의가 반복됨",
+   "ref_videos": [
+    {
+     "t": "2평 #알파룸 이렇게 변신할 수 있다고? 작은방 맞춤 인테리어의 힘✨ #아이방인테리어 #2평방꾸미기 #작은방꾸미기 #맞춤가구  #아이방꾸미기 #육아맘브이로그 #집꾸미기 #인테리어",
+     "id": "zAT6ithGL9c",
+     "v": 69818,
+     "d": 313
+    },
+    {
+     "t": "#인테리어 없이도 달라지는 집, 맞춤 제작가구로 완성했어요 #맞춤가구 #신축아파트 #수납공간 #공간활용 #홈스타일링 #집꾸미기 #인테리어팁 #아파트인테리어 #interior",
+     "id": "UqrNqY-2T0I",
+     "v": 4996,
+     "d": 269
+    },
+    {
+     "t": "신규아파트 인테리어 절대로 하지마세요 맞춤가구로 인테리어와 수납까지 한번에 해결",
+     "id": "f5NTlaVODSY",
+     "v": 4195,
+     "d": 548
     }
    ],
    "trend": []
@@ -302,31 +330,95 @@
   {
    "date": "2026-07-07",
    "industry": "derma",
-   "keyword": "필러 부위별 부작용",
+   "keyword": "모공 관리 효과적인 방법",
+   "power_grade": "C",
+   "buzz_grade": "C",
+   "is_sweetspot": false,
+   "score": 52,
+   "click_reason": "모공이 줄어들지 않는 이유와 실제 효과적인 시술·홈케어 방법이 궁금해서 검색",
+   "naver_questions": "모공관리 효과없음, 효과적인 시술 문의, 부위별(코·볼) 축소 방법, 홈케어 방법",
+   "ref_videos": [
+    {
+     "t": "모공이 늘어나는 이유! 이것부터 관리해주세요~😀",
+     "id": "H0NqE5ZbwqM",
+     "v": 98343,
+     "d": 1117
+    },
+    {
+     "t": "구독자분들만 보세요... 누구나 쉽게 집에서 커진 모공 줄이는 방법 | 깐달걀피부 만드는 방법",
+     "id": "bFQfRCjxnB8",
+     "v": 75426,
+     "d": 313
+    },
+    {
+     "t": "20년만에 알아낸 커진 모공 줄이는 가장 확실한 방법을 피부과 전문의가 제대로 알려드립니다 (연령별 모공 제대로 줄이는 피부과 시술)",
+     "id": "xysFu9rwcpk",
+     "v": 24255,
+     "d": 102
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "derma",
+   "keyword": "안티에이징 시작 시기와 관리법",
    "power_grade": "A",
    "buzz_grade": "S",
    "is_sweetspot": false,
-   "score": 79,
-   "click_reason": "특정 부위(눈밑, 코, 입술 등) 필러 시술 후 부작용 사례와 안전성이 궁금해서 검색한다",
-   "naver_questions": "부위별 부작용 여부·후기·안전성 관련 질문 반복",
+   "score": 70,
+   "click_reason": "몇 살부터 안티에이징 관리를 시작해야 하는지, 시술과 스킨케어 성분 차이가 궁금해서 검색",
+   "naver_questions": "20대부터 관리 필요 여부, 세럼·크림 성분 비교, 시술 대신 기초 루틴 전환 이유",
+   "ref_videos": [
+    {
+     "t": "\"얼굴 노화 10년 막습니다.\" 시술 없이 젊어지는 가장 간단한 방법 (피부과 안지수 원장) | IOPE L.A.B.",
+     "id": "UxWmcFeLTwM",
+     "v": 834115,
+     "d": 803
+    },
+    {
+     "t": "매년 27억 투자하는 억만장자의 안티에이징 식단 #안티에이징 #저속노화 #건강식단",
+     "id": "4va_BLtWkdM",
+     "v": 397812,
+     "d": 346
+    },
+    {
+     "t": "(*Eng) 요즘 써보고 좋았던 신상과 기존 제품들 조합템?! 203040 슬로우에이징 방법, 한살 더 어려지기 by Directorpi",
+     "id": "O3u-GsNF9IM",
+     "v": 103909,
+     "d": 528
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "derma",
+   "keyword": "필러 부작용 부위별 사례",
+   "power_grade": "S",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 88,
+   "click_reason": "부위별(입술·눈밑·코 등) 필러 부작용 사례와 안전성 여부가 걱정되어 검색",
+   "naver_questions": "부위별 부작용 사례, 부작용 진단 시기, 안전성 문의, 부작용 후기 공유",
    "ref_videos": [
     {
      "t": "필러 절대 맞으면 안되는 3가지 부위 | 필러 부작용, 종류, 후기 + 추천 부위",
      "id": "bouuK3AmaGQ",
-     "v": 2070708,
+     "v": 2070737,
      "d": 1083
+    },
+    {
+     "t": "필러 부작용 겪은 피부과 의사의 필러 비추천하는 이유 🙅🏻‍♀️ #shorts",
+     "id": "Bfp8hzpkFtQ",
+     "v": 550517,
+     "d": 1244
     },
     {
      "t": "(*Eng) 필러 부작용 사례가 이렇게 많은데 맞아도될까? - 피부과전문의 [닥터필러]",
      "id": "7YIuhFf58v8",
      "v": 217450,
      "d": 2428
-    },
-    {
-     "t": "여긴 절대 하지 마세요! #shorts #필러부작용 #필러 #필러시술",
-     "id": "bQg6WrMePKM",
-     "v": 126738,
-     "d": 495
     }
    ],
    "trend": []
@@ -334,51 +426,19 @@
   {
    "date": "2026-07-07",
    "industry": "derma",
-   "keyword": "실리프팅 효과 부작용",
-   "power_grade": "A",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 65,
-   "click_reason": "실리프팅의 효과 지속기간과 붓기·부작용 여부, 병원 선택 기준이 궁금해서 검색한다",
-   "naver_questions": "효과·부작용·유지기간·병원선택 관련 반복 질문 다수",
+   "keyword": "3040 피부관리 루틴",
+   "power_grade": "B",
+   "buzz_grade": "A",
+   "is_sweetspot": true,
+   "score": 58,
+   "click_reason": "3040 나이대에 맞는 피부관리 루틴과 시술 여부, 화장품 추천이 궁금해서 검색",
+   "naver_questions": "3040 관리방법 문의, 화장품 추천, 리프팅 시술 여부, 색소·기미 관리법",
    "ref_videos": [
     {
-     "t": "실리프팅의 종류 및 붓기, 부작용, 유지기간까지! 40대 50대 피부처짐이 걱정이라면? 필수 시청! | 성형외과 전문의 전경욱 (eng. korean beauty clinic)",
-     "id": "2MS0b48Qt50",
-     "v": 476820,
-     "d": 870
-    },
-    {
-     "t": "이거 모르면 실리프팅 200% 후회합니다ㅣ효과 있는 실리프팅 VS 효과 없는 실리프팅 차이는 ‘이것’ㅣ동탄실리프팅ㅣ오산실리프팅ㅣ수원실리프팅",
-     "id": "BcnEJzgSTJU",
-     "v": 313013,
-     "d": 313
-    },
-    {
-     "t": "처진 얼굴 올려주는 실리프팅, 하지말아야 하는 이유 8가지",
-     "id": "uBFkSccItuU",
-     "v": 177833,
-     "d": 1696
-    }
-   ],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "derma",
-   "keyword": "3040 피부관리 방법",
-   "power_grade": "A",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 63,
-   "click_reason": "3040대에 맞는 피부관리법과 화장품·시술 정보를 비교하기 위해 검색한다",
-   "naver_questions": "연령대별 관리법·화장품 추천·시술 정보 관련 질문 반복",
-   "ref_videos": [
-    {
-     "t": "30대 꿀피부 출근전 스킨케어 루틴🩵 #skincare #asmr #kbeauty",
-     "id": "qDje7cL7iZ0",
-     "v": 1133550,
-     "d": 335
+     "t": "화장하면 묘하게 나이들어보이는 3040 필수 시청⭐️ [랜선메이크업레슨]",
+     "id": "DqH3m73UUR8",
+     "v": 423409,
+     "d": 369
     },
     {
      "t": "3040필수🔥나이들수록 더 예뻐지는 한끗차이는 이겁니다‼️화장변화, 고급미 포인트, 필수관리 등 | 인보라INBORA",
@@ -397,32 +457,224 @@
   },
   {
    "date": "2026-07-07",
-   "industry": "interior",
-   "keyword": "아이방·학생방 맞춤가구 제작업체 찾기",
+   "industry": "derma",
+   "keyword": "실리프팅 효과와 부작용",
+   "power_grade": "B",
+   "buzz_grade": "A",
+   "is_sweetspot": true,
+   "score": 78,
+   "click_reason": "처짐 개선 효과와 병원 선택 기준, 붓기·유지기간·부작용 회복 시점이 궁금해서 검색",
+   "naver_questions": "50대 얼굴 처짐 효과, 부작용없는 병원, 붓기·부작용 후기, 병원 선택 기준, 딤플 회복 여부",
+   "ref_videos": [
+    {
+     "t": "실리프팅의 종류 및 붓기, 부작용, 유지기간까지! 40대 50대 피부처짐이 걱정이라면? 필수 시청! | 성형외과 전문의 전경욱 (eng. korean beauty clinic)",
+     "id": "2MS0b48Qt50",
+     "v": 476819,
+     "d": 870
+    },
+    {
+     "t": "처진 얼굴 올려주는 실리프팅, 하지말아야 하는 이유 8가지",
+     "id": "uBFkSccItuU",
+     "v": 177838,
+     "d": 1696
+    },
+    {
+     "t": "실리프팅 시술 이런 분들은 효과 없습니다🚫",
+     "id": "sGGY3voot40",
+     "v": 79002,
+     "d": 1048
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "dental",
+   "keyword": "임플란트 재수술",
+   "power_grade": "D",
+   "buzz_grade": "C",
+   "is_sweetspot": false,
+   "score": 38,
+   "click_reason": "재수술이 필요한 이유와 예상 비용, 실제 후기가 궁금해서 클릭",
+   "naver_questions": "재수술 원인, 비용, 후기 등 반복 질문 패턴",
+   "ref_videos": [
+    {
+     "t": "(EP.8) 임플란트 재수술, 치료 방법과 기간 그리고 통증",
+     "id": "_S3qSiTthVg",
+     "v": 17454,
+     "d": 1278
+    },
+    {
+     "t": "임플란트 후 ‘이것’ 절대 하지 마세요! 수백만 원 날리고 재수술합니다…ㅣ임플란트 주의사항",
+     "id": "RpQPq_D_5M0",
+     "v": 15209,
+     "d": 207
+    },
+    {
+     "t": "임플란트 재수술하면 되는데 제발...",
+     "id": "tvdq3B6iDcY",
+     "v": 5264,
+     "d": 1180
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "dental",
+   "keyword": "임플란트 통증",
    "power_grade": "C",
+   "buzz_grade": "C",
+   "is_sweetspot": false,
+   "score": 45,
+   "click_reason": "시술 시 통증 정도와 통증이 지속되는 기간이 걱정되어 클릭",
+   "naver_questions": "통증 강도, 회복 기간, 통증 적은 병원 문의가 반복됨",
+   "ref_videos": [
+    {
+     "t": "[임플란트통증?] - 00보다도 안아픕니다.",
+     "id": "wnNbc3UQ-7c",
+     "v": 24472,
+     "d": 1384
+    },
+    {
+     "t": "임플란트 수술 통증은 어느 정도일까?🙄 #shorts #임플란트관리 #임플란트",
+     "id": "YRzEYbz5Sdk",
+     "v": 18582,
+     "d": 1267
+    },
+    {
+     "t": "임플란트 후 통증, 잇몸이 무너진 이유... #앞니임플란트 #임플란트통증 #임플란트주의염",
+     "id": "WPXe--DndhU",
+     "v": 17227,
+     "d": 329
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "dental",
+   "keyword": "임플란트 수명",
+   "power_grade": "C",
+   "buzz_grade": "B",
+   "is_sweetspot": false,
+   "score": 62,
+   "click_reason": "임플란트를 얼마나 오래 사용할 수 있는지와 수명을 늘리는 관리 방법이 궁금해서 클릭",
+   "naver_questions": "평균 수명, 수명 연장 방법, 관리법 관련 질문 반복",
+   "ref_videos": [
+    {
+     "t": "#임플란트수명 이 10년이라던데 사실인가요🤔? ○○에 따라 다릅니다!",
+     "id": "6u5L56GwntQ",
+     "v": 102351,
+     "d": 1191
+    },
+    {
+     "t": "환자들은 모르는 임플란트 수명과 부작용 없이 오래 쓰는 3가지 방법!",
+     "id": "FL_GUbQHfm0",
+     "v": 90320,
+     "d": 615
+    },
+    {
+     "t": "[임플란트 5편] 임플란트 수명, '이것'에 달렸다",
+     "id": "B0C7qu38O00",
+     "v": 54186,
+     "d": 1890
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "dental",
+   "keyword": "임플란트 비용",
+   "power_grade": "C",
+   "buzz_grade": "A",
+   "is_sweetspot": true,
+   "score": 78,
+   "click_reason": "치과마다 다른 임플란트 가격 차이와 대략적인 예상 비용이 궁금해서 클릭",
+   "naver_questions": "비용 수준 문의, 지역별/치과별 가격 비교, 보험 적용 기준 반복 질문",
+   "ref_videos": [
+    {
+     "t": "이 가격이면 임플란트 하셔도 됩니다 | 임플란트 비용, 합리적인 가격, 보험 임플란트 총정리",
+     "id": "z5jW4uT7XYQ",
+     "v": 40736,
+     "d": 528
+    },
+    {
+     "t": "임플란트 틀니 평균비용? 속 시원하게 공개합니다.",
+     "id": "7QpKp605vV0",
+     "v": 35510,
+     "d": 161
+    },
+    {
+     "t": "임플란트 가격, 치과 가기전에 '이것' 꼭 확인하세요",
+     "id": "WA2ixR3W5EQ",
+     "v": 30067,
+     "d": 145
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "dental",
+   "keyword": "임플란트 부작용",
+   "power_grade": "B",
    "buzz_grade": "S",
    "is_sweetspot": true,
-   "score": 32,
-   "click_reason": "아이방·학생방 등 특정 공간에 맞는 맞춤가구를 잘 만드는 업체를 찾고 싶어서 검색한다",
-   "naver_questions": "맞춤가구 잘하는곳, 아이방맞춤가구 제작잘하는곳은?, 학생방맞춤가구 알아봐요 등 지역·용도별 업체 추천 질문이 반복됨",
+   "score": 80,
+   "click_reason": "임플란트 시술 후 생길 수 있는 부작용 종류와 특정 건강 상태(당뇨, 알레르기 등)에서의 주의사항이 궁금해서 클릭",
+   "naver_questions": "부작용 종류, 특정 질환자 사례, 알레르기 관련 질문 반복",
    "ref_videos": [
     {
-     "t": "2평 #알파룸 이렇게 변신할 수 있다고? 작은방 맞춤 인테리어의 힘✨ #아이방인테리어 #2평방꾸미기 #작은방꾸미기 #맞춤가구  #아이방꾸미기 #육아맘브이로그 #집꾸미기 #인테리어",
-     "id": "zAT6ithGL9c",
-     "v": 69780,
-     "d": 313
+     "t": "임플란트 부작용 1위, 지대주 부러짐 및 나사풀림",
+     "id": "U3yeUHtGlcc",
+     "v": 365742,
+     "d": 970
     },
     {
-     "t": "순식간에 쓸모가 없어진 400만 원짜리 맞춤가구",
-     "id": "Qfbtw8_rZ7Y",
-     "v": 25016,
-     "d": 455
+     "t": "'이거'모르면 평생 후회합니다ㅣ임플란트 부작용 TOP3ㅣ최악의 임플란트 부작용",
+     "id": "v6hDbppv08A",
+     "v": 285631,
+     "d": 820
     },
     {
-     "t": "#인테리어 없이도 달라지는 집, 맞춤 제작가구로 완성했어요 #맞춤가구 #신축아파트 #수납공간 #공간활용 #홈스타일링 #집꾸미기 #인테리어팁 #아파트인테리어 #interior",
-     "id": "UqrNqY-2T0I",
-     "v": 4996,
-     "d": 269
+     "t": "임플란트 부작용, 이것만큼은 꼭 아셔야 합니다.",
+     "id": "GNGtqIWOE8M",
+     "v": 55086,
+     "d": 985
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "cancer",
+   "keyword": "암 수술 후 회복",
+   "power_grade": "S",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 58,
+   "click_reason": "암종별 수술 후 회복 기간과 관리 방법이 궁금해서, 요양병원 선택 기준을 알아보려는 목적",
+   "naver_questions": "위암·간암·대장암 등 수술 후 회복 기간, 요양병원 회복 프로그램 관련 반복 질문",
+   "ref_videos": [
+    {
+     "t": "전이된 암 환자를 마주한 의사의 반응은? #의학다큐",
+     "id": "fkFgHT3dA0M",
+     "v": 11685224,
+     "d": 445
+    },
+    {
+     "t": "항암치료 부작용? '이때'부터가 중요해요 #건강 #암 #항암",
+     "id": "QEx9xCPL0BY",
+     "v": 686278,
+     "d": 690
+    },
+    {
+     "t": "항암제의 진화 과정",
+     "id": "G2U9CRST6vo",
+     "v": 289353,
+     "d": 724
     }
    ],
    "trend": []
@@ -430,63 +682,31 @@
   {
    "date": "2026-07-07",
    "industry": "interior",
-   "keyword": "바닥재·마감재 원목 vs 필름 비교",
-   "power_grade": "S",
+   "keyword": "친환경·천연 인테리어 자재 선택 고민",
+   "power_grade": "A",
    "buzz_grade": "S",
    "is_sweetspot": false,
-   "score": 92,
-   "click_reason": "강마루·강화마루·필름·원목 등 마감재 종류 중 우리 집에 맞는 선택을 비교해보고 싶어서 검색한다",
-   "naver_questions": "강화마루vs강마루, Spc마루 vs 강마루, 원목중문 VS 원목필름중문 등 소재 비교(vs) 질문이 반복됨",
+   "score": 78,
+   "click_reason": "아토피 등 건강 이슈나 감성 톤을 고려해 어떤 자재를 선택해야 할지 고민되어 검색한다",
+   "naver_questions": "천연 소재 가구, 친환경 인테리어 소재, 자연소재 활용 장점 등 소재 선택 기준을 묻는 질문이 반복됨",
    "ref_videos": [
     {
-     "t": "고객님이 기성문짝 달아놓은줄아셨대요/인테리어필름시공",
-     "id": "Pg-J0PmtZfU",
-     "v": 6584358,
-     "d": 1168
+     "t": "퀄리티 올리는 인테리어 자재 TOP3 #인테리어팁 #리모델링 #인테리어",
+     "id": "LcmBYaQFxtQ",
+     "v": 711161,
+     "d": 302
     },
     {
-     "t": "원목식탁 절대 사면 안되는 이유❗️",
-     "id": "PstHO19FlsA",
-     "v": 2383861,
-     "d": 343
+     "t": "욕실 인테리어 리모델링 끝판왕ㄷㄷ #예쁜인테리어 #욕실 #인테리어 #메인인테리어 #리모델링 #타일",
+     "id": "3OAVt6OMewE",
+     "v": 706584,
+     "d": 474
     },
     {
-     "t": "현시점 디자이너픽 1등 벽지&필름 #벽지인테리어 #필름시공 #필름지",
-     "id": "hXBN05V6T-w",
-     "v": 437664,
-     "d": 411
-    }
-   ],
-   "trend": []
-  },
-  {
-   "date": "2026-07-07",
-   "industry": "interior",
-   "keyword": "좁은 집 수납 인테리어 아이디어",
-   "power_grade": "S",
-   "buzz_grade": "S",
-   "is_sweetspot": false,
-   "score": 90,
-   "click_reason": "좁은 공간을 효율적으로 정리하고 꾸미는 수납 방법과 후기가 궁금해서 검색한다",
-   "naver_questions": "수납 인테리어 문의, 정리수납 인테리어 잘된집 사진, 베란다 수납 인테리어 등 공간별 수납 정리 질문이 반복됨",
-   "ref_videos": [
-    {
-     "t": "이케아 수납장 위에 이걸 올리세요💙 #이케아추천템 #이케아에케트 #거실수납장 #거실인테리어 #작은집인테리어 #살림추천템 #이케아책상 #이케아화장대",
-     "id": "UU8CJwjd9Js",
-     "v": 5689954,
-     "d": 488
-    },
-    {
-     "t": "안방 이케아 수납장의 대변신💛",
-     "id": "N4sDoZ2OVw0",
-     "v": 2492448,
-     "d": 457
-    },
-    {
-     "t": "주방 인테리어 적용 가능",
-     "id": "kNTlQ_JtqrI",
-     "v": 771348,
-     "d": 1046
+     "t": "인테리어 상담전 꼭 보고가세요! 인테리어회사 대표가 알려주는 가구자재의 모든것ㅣ소재부터 가격까지ㅣ가구 마감재 고르는 팁",
+     "id": "SR7Kzu3AFF4",
+     "v": 9058,
+     "d": 876
     }
    ],
    "trend": []
@@ -526,31 +746,255 @@
   {
    "date": "2026-07-07",
    "industry": "interior",
-   "keyword": "친환경·천연 인테리어 자재 선택 고민",
+   "keyword": "좁은 집 수납 인테리어 아이디어",
+   "power_grade": "S",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 90,
+   "click_reason": "좁은 공간을 효율적으로 정리하고 꾸미는 수납 방법과 후기가 궁금해서 검색한다",
+   "naver_questions": "수납 인테리어 문의, 정리수납 인테리어 잘된집 사진, 베란다 수납 인테리어 등 공간별 수납 정리 질문이 반복됨",
+   "ref_videos": [
+    {
+     "t": "이케아 수납장 위에 이걸 올리세요💙 #이케아추천템 #이케아에케트 #거실수납장 #거실인테리어 #작은집인테리어 #살림추천템 #이케아책상 #이케아화장대",
+     "id": "UU8CJwjd9Js",
+     "v": 5689954,
+     "d": 488
+    },
+    {
+     "t": "안방 이케아 수납장의 대변신💛",
+     "id": "N4sDoZ2OVw0",
+     "v": 2492448,
+     "d": 457
+    },
+    {
+     "t": "주방 인테리어 적용 가능",
+     "id": "kNTlQ_JtqrI",
+     "v": 771348,
+     "d": 1046
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "바닥재·마감재 원목 vs 필름 비교",
+   "power_grade": "S",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 92,
+   "click_reason": "강마루·강화마루·필름·원목 등 마감재 종류 중 우리 집에 맞는 선택을 비교해보고 싶어서 검색한다",
+   "naver_questions": "강화마루vs강마루, Spc마루 vs 강마루, 원목중문 VS 원목필름중문 등 소재 비교(vs) 질문이 반복됨",
+   "ref_videos": [
+    {
+     "t": "고객님이 기성문짝 달아놓은줄아셨대요/인테리어필름시공",
+     "id": "Pg-J0PmtZfU",
+     "v": 6584358,
+     "d": 1168
+    },
+    {
+     "t": "원목식탁 절대 사면 안되는 이유❗️",
+     "id": "PstHO19FlsA",
+     "v": 2383861,
+     "d": 343
+    },
+    {
+     "t": "현시점 디자이너픽 1등 벽지&필름 #벽지인테리어 #필름시공 #필름지",
+     "id": "hXBN05V6T-w",
+     "v": 437664,
+     "d": 411
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "아이방·학생방 맞춤가구 제작업체 찾기",
+   "power_grade": "C",
+   "buzz_grade": "S",
+   "is_sweetspot": true,
+   "score": 32,
+   "click_reason": "아이방·학생방 등 특정 공간에 맞는 맞춤가구를 잘 만드는 업체를 찾고 싶어서 검색한다",
+   "naver_questions": "맞춤가구 잘하는곳, 아이방맞춤가구 제작잘하는곳은?, 학생방맞춤가구 알아봐요 등 지역·용도별 업체 추천 질문이 반복됨",
+   "ref_videos": [
+    {
+     "t": "2평 #알파룸 이렇게 변신할 수 있다고? 작은방 맞춤 인테리어의 힘✨ #아이방인테리어 #2평방꾸미기 #작은방꾸미기 #맞춤가구  #아이방꾸미기 #육아맘브이로그 #집꾸미기 #인테리어",
+     "id": "zAT6ithGL9c",
+     "v": 69780,
+     "d": 313
+    },
+    {
+     "t": "순식간에 쓸모가 없어진 400만 원짜리 맞춤가구",
+     "id": "Qfbtw8_rZ7Y",
+     "v": 25016,
+     "d": 455
+    },
+    {
+     "t": "#인테리어 없이도 달라지는 집, 맞춤 제작가구로 완성했어요 #맞춤가구 #신축아파트 #수납공간 #공간활용 #홈스타일링 #집꾸미기 #인테리어팁 #아파트인테리어 #interior",
+     "id": "UqrNqY-2T0I",
+     "v": 4996,
+     "d": 269
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "derma",
+   "keyword": "3040 피부관리 방법",
    "power_grade": "A",
    "buzz_grade": "S",
    "is_sweetspot": false,
-   "score": 78,
-   "click_reason": "아토피 등 건강 이슈나 감성 톤을 고려해 어떤 자재를 선택해야 할지 고민되어 검색한다",
-   "naver_questions": "천연 소재 가구, 친환경 인테리어 소재, 자연소재 활용 장점 등 소재 선택 기준을 묻는 질문이 반복됨",
+   "score": 63,
+   "click_reason": "3040대에 맞는 피부관리법과 화장품·시술 정보를 비교하기 위해 검색한다",
+   "naver_questions": "연령대별 관리법·화장품 추천·시술 정보 관련 질문 반복",
    "ref_videos": [
     {
-     "t": "퀄리티 올리는 인테리어 자재 TOP3 #인테리어팁 #리모델링 #인테리어",
-     "id": "LcmBYaQFxtQ",
-     "v": 711161,
-     "d": 302
+     "t": "30대 꿀피부 출근전 스킨케어 루틴🩵 #skincare #asmr #kbeauty",
+     "id": "qDje7cL7iZ0",
+     "v": 1133550,
+     "d": 335
     },
     {
-     "t": "욕실 인테리어 리모델링 끝판왕ㄷㄷ #예쁜인테리어 #욕실 #인테리어 #메인인테리어 #리모델링 #타일",
-     "id": "3OAVt6OMewE",
-     "v": 706584,
-     "d": 474
+     "t": "3040필수🔥나이들수록 더 예뻐지는 한끗차이는 이겁니다‼️화장변화, 고급미 포인트, 필수관리 등 | 인보라INBORA",
+     "id": "OHROSXa0m60",
+     "v": 82607,
+     "d": 258
     },
     {
-     "t": "인테리어 상담전 꼭 보고가세요! 인테리어회사 대표가 알려주는 가구자재의 모든것ㅣ소재부터 가격까지ㅣ가구 마감재 고르는 팁",
-     "id": "SR7Kzu3AFF4",
-     "v": 9058,
-     "d": 876
+     "t": "3040부터는 제발 이거 쓰세요...안좋은 피부도 180도 바꿔주는 치트키🔥",
+     "id": "Y0-GSFkg31w",
+     "v": 31217,
+     "d": 91
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "derma",
+   "keyword": "실리프팅 효과 부작용",
+   "power_grade": "A",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 65,
+   "click_reason": "실리프팅의 효과 지속기간과 붓기·부작용 여부, 병원 선택 기준이 궁금해서 검색한다",
+   "naver_questions": "효과·부작용·유지기간·병원선택 관련 반복 질문 다수",
+   "ref_videos": [
+    {
+     "t": "실리프팅의 종류 및 붓기, 부작용, 유지기간까지! 40대 50대 피부처짐이 걱정이라면? 필수 시청! | 성형외과 전문의 전경욱 (eng. korean beauty clinic)",
+     "id": "2MS0b48Qt50",
+     "v": 476820,
+     "d": 870
+    },
+    {
+     "t": "이거 모르면 실리프팅 200% 후회합니다ㅣ효과 있는 실리프팅 VS 효과 없는 실리프팅 차이는 ‘이것’ㅣ동탄실리프팅ㅣ오산실리프팅ㅣ수원실리프팅",
+     "id": "BcnEJzgSTJU",
+     "v": 313013,
+     "d": 313
+    },
+    {
+     "t": "처진 얼굴 올려주는 실리프팅, 하지말아야 하는 이유 8가지",
+     "id": "uBFkSccItuU",
+     "v": 177833,
+     "d": 1696
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "derma",
+   "keyword": "필러 부위별 부작용",
+   "power_grade": "A",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 79,
+   "click_reason": "특정 부위(눈밑, 코, 입술 등) 필러 시술 후 부작용 사례와 안전성이 궁금해서 검색한다",
+   "naver_questions": "부위별 부작용 여부·후기·안전성 관련 질문 반복",
+   "ref_videos": [
+    {
+     "t": "필러 절대 맞으면 안되는 3가지 부위 | 필러 부작용, 종류, 후기 + 추천 부위",
+     "id": "bouuK3AmaGQ",
+     "v": 2070708,
+     "d": 1083
+    },
+    {
+     "t": "(*Eng) 필러 부작용 사례가 이렇게 많은데 맞아도될까? - 피부과전문의 [닥터필러]",
+     "id": "7YIuhFf58v8",
+     "v": 217450,
+     "d": 2428
+    },
+    {
+     "t": "여긴 절대 하지 마세요! #shorts #필러부작용 #필러 #필러시술",
+     "id": "bQg6WrMePKM",
+     "v": 126738,
+     "d": 495
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "derma",
+   "keyword": "안티에이징 관리 시작 시기",
+   "power_grade": "A",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 88,
+   "click_reason": "몇 살부터 안티에이징 관리를 시작해야 하는지, 성분·제품 비교 정보가 궁금해서 검색한다",
+   "naver_questions": "시작 시기·성분(EGF)·크림 비교·시술 관련 질문 반복",
+   "ref_videos": [
+    {
+     "t": "\"얼굴 노화 10년 막습니다.\" 시술 없이 젊어지는 가장 간단한 방법 (피부과 안지수 원장) | IOPE L.A.B.",
+     "id": "UxWmcFeLTwM",
+     "v": 834112,
+     "d": 803
+    },
+    {
+     "t": "매년 27억 투자하는 억만장자의 안티에이징 식단 #안티에이징 #저속노화 #건강식단",
+     "id": "4va_BLtWkdM",
+     "v": 397802,
+     "d": 346
+    },
+    {
+     "t": "피부과 전문의가 말하는 4가지 안티에이징 시술 #항노화시술",
+     "id": "EQKrjpeOoWo",
+     "v": 11978,
+     "d": 431
+    }
+   ],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "derma",
+   "keyword": "모공 축소 관리법",
+   "power_grade": "B",
+   "buzz_grade": "S",
+   "is_sweetspot": true,
+   "score": 74,
+   "click_reason": "넓어진 모공을 줄이는 효과적인 시술과 지역별 병원 정보를 찾기 위해 검색한다",
+   "naver_questions": "효과·시술종류·지역병원 추천 관련 질문 반복",
+   "ref_videos": [
+    {
+     "t": "✅클릭👉모공 지우개 약국템 top4 점수 매겨보기! 1등은?😍 #모공 #피부 #피부약국템 #약국템 #피부템 #모공템",
+     "id": "wBH1Xqm0aVw",
+     "v": 868822,
+     "d": 304
+    },
+    {
+     "t": "20년만에 알아낸 커진 모공 줄이는 가장 확실한 방법을 피부과 전문의가 제대로 알려드립니다 (연령별 모공 제대로 줄이는 피부과 시술)",
+     "id": "xysFu9rwcpk",
+     "v": 24255,
+     "d": 102
+    },
+    {
+     "t": "모공 관리는 무조건 해야 합니다🧐",
+     "id": "DTsbMc-THnU",
+     "v": 12850,
+     "d": 831
     }
    ],
    "trend": []
@@ -558,33 +1002,105 @@
   {
    "date": "2026-07-07",
    "industry": "cancer",
-   "keyword": "암환자 식단 관리",
+   "keyword": "암환자 식단",
+   "power_grade": "A",
+   "buzz_grade": "A",
+   "is_sweetspot": false,
+   "score": 66,
+   "click_reason": "매일 식단을 어떻게 구성해야 할지 막막하여 구체적 식재료·배달 서비스 정보를 찾는 질문 패턴",
+   "naver_questions": "암환자 식단 구성, 영양식 배달, 식욕부진 대처 관련 질문 다수",
+   "ref_videos": [],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "맞춤가구 업체 추천",
+   "power_grade": "D",
+   "buzz_grade": "B",
+   "is_sweetspot": false,
+   "score": 40,
+   "click_reason": "지역별로 잘하는 맞춤가구 업체를 찾고 아이방·학생방 등 특정 공간용 제작 방법을 알고 싶어 클릭한다",
+   "naver_questions": "잘하는 곳/업체 추천, 아이방·학생방 맞춤가구 제작 방법 문의가 반복됨",
+   "ref_videos": [],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "인테리어 마감소재 추천",
    "power_grade": "A",
    "buzz_grade": "S",
    "is_sweetspot": false,
-   "score": 60,
-   "click_reason": "치료 중 무엇을 먹고 피해야 하는지, 집에서 실천 가능한 식단 정보를 찾고 싶어서",
-   "naver_questions": "암환자 식단을 집에서 챙기는 법, 식단 배달 서비스, 암종별 권장 음식 관련 반복 질문",
-   "ref_videos": [
-    {
-     "t": "암 환자 음식, 이걸 먹어야 암을 이겨냅니다 (암세포가 싫어하는 10가지 음식)",
-     "id": "_O8xHUOmTdo",
-     "v": 1506805,
-     "d": 823
-    },
-    {
-     "t": "전립선암 환자를 위한 식사요법[환자설명자료]",
-     "id": "b-9hUB3yW_o",
-     "v": 59410,
-     "d": 2581
-    },
-    {
-     "t": "암환자 식단, 암환자 음식, 항암중 식단, 항암중 음식",
-     "id": "Ovll0Mu5gn0",
-     "v": 31020,
-     "d": 244
-    }
-   ],
+   "score": 85,
+   "click_reason": "친환경·천연 소재를 활용한 마감재 선택 기준과 공간별 추천 소재가 궁금해 클릭한다",
+   "naver_questions": "친환경/천연 소재 선택 기준, 공간별(욕실·주방·거실) 마감재 추천 질문이 반복됨",
+   "ref_videos": [],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "붙박이장 시공 비용",
+   "power_grade": "A",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 88,
+   "click_reason": "붙박이장 설치 비용과 적절한 시공 시점, 기존 붙박이장 철거·보수 방법이 궁금해 클릭한다",
+   "naver_questions": "설치 비용, 시공 타이밍(입주 전후), 철거·보수 방법에 대한 질문이 반복됨",
+   "ref_videos": [],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "수납 인테리어 아이디어",
+   "power_grade": "S",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 93,
+   "click_reason": "좁은 공간을 효율적으로 정리할 수 있는 수납 인테리어 사례와 아이디어를 찾고 싶어 클릭한다",
+   "naver_questions": "저렴하고 실용적인 수납 인테리어 사례, 공간별(베란다·거실·주방) 정리 아이디어 질문이 반복됨",
+   "ref_videos": [],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "interior",
+   "keyword": "원목 vs 필름 시공 비교",
+   "power_grade": "S",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 95,
+   "click_reason": "원목·필름·시트지 등 유사 마감재 간 장단점과 관리 방법을 비교하고 싶어 클릭한다",
+   "naver_questions": "원목 vs 필름, 강마루 vs 강화마루 등 자재 비교와 관리 방법에 대한 질문이 반복됨",
+   "ref_videos": [],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "derma",
+   "keyword": "필러 부위별 부작용 사례",
+   "power_grade": "A",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 86,
+   "click_reason": "입술, 눈밑, 코 등 부위별 부작용 사례와 안전성을 확인하려는 질문이 많음",
+   "naver_questions": "부위별 부작용 사례/안전성 확인 질문이 반복됨",
+   "ref_videos": [],
+   "trend": []
+  },
+  {
+   "date": "2026-07-07",
+   "industry": "derma",
+   "keyword": "안티에이징 시술과 화장품 비교",
+   "power_grade": "A",
+   "buzz_grade": "S",
+   "is_sweetspot": false,
+   "score": 88,
+   "click_reason": "몇 살부터 관리를 시작해야 하는지, 화장품과 시술의 차이가 궁금해 정보를 찾는 경우가 많음",
+   "naver_questions": "시작 시기/제품 성분 비교/시술 병행 여부 질문이 반복됨",
+   "ref_videos": [],
    "trend": []
   }
  ]
