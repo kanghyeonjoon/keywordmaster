@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Make 웹훅으로 테스트 데이터 전송
         run: |
-          curl -sS -X POST 'https://hook.eu2.make.com/eolp9h6rnlhb48hcr30sg2h29558iw4d' \
+          curl -sS -X POST 'https://hook.eu2.make.com/vg89iv826vj2majdemywlw75rwgo343v' \
             --data-urlencode 'channel=테스트채널' \
             --data-urlencode 'field=재테크' \
             --data-urlencode 'format=숏폼' \

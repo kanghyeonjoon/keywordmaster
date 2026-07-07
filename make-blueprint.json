@@ -5,11 +5,11 @@
             "id": 1,
             "module": "gateway:CustomWebHook",
             "version": 1,
-            "parameters": { "hook": 4243332, "maxResults": 1 },
+            "parameters": { "hook": 4243481, "maxResults": 1 },
             "mapper": {},
             "metadata": {
                 "designer": { "x": 0, "y": 0 },
-                "restore": { "parameters": { "hook": { "label": "영상 기획안·대본 생성 폼 웹훅" } } }
+                "restore": { "parameters": { "hook": { "label": "영상 기획안·대본 생성 웹훅 v2" } } }
             }
         },
         {
