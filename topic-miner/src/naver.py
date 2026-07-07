@@ -8,8 +8,8 @@ TIMEOUT = 15
 
 
 def _headers() -> dict:
-    cid = os.environ.get("NAVER_CLIENT_ID", "")
-    sec = os.environ.get("NAVER_CLIENT_SECRET", "")
+    cid = os.environ.get("NAVER_CLIENT_ID", "").strip()
+    sec = os.environ.get("NAVER_CLIENT_SECRET", "").strip()
     if not cid or not sec:
         raise RuntimeError("NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 환경변수가 없습니다.")
     return {"X-Naver-Client-Id": cid, "X-Naver-Client-Secret": sec}
