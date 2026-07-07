@@ -162,6 +162,24 @@
                 </div>
 
                 <div class="form-group">
+                    <label>생성 모드 <span class="req">*</span></label>
+                    <div class="format-toggle">
+                        <input type="radio" name="mode" value="기획안+대본" id="modeBoth" checked>
+                        <label for="modeBoth">📦 기획안+대본</label>
+                        <input type="radio" name="mode" value="기획안만" id="modePlan">
+                        <label for="modePlan">📋 기획안만</label>
+                        <input type="radio" name="mode" value="대본만" id="modeScript">
+                        <label for="modeScript">🎬 대본만</label>
+                    </div>
+                    <div class="hint">추천 흐름: <b>기획안만</b> 생성 → 이메일로 검토·수정 → <b>대본만</b> 모드에 붙여넣어 대본 생성</div>
+                </div>
+
+                <div class="form-group" id="planGroup" style="display:none">
+                    <label>검토된 기획안 붙여넣기 <span class="req">*</span></label>
+                    <textarea name="plan" id="planBox" style="min-height:140px" placeholder="이메일로 받은 기획안을 검토·수정한 뒤 여기에 붙여넣으세요. 이 기획안 그대로 대본이 만들어집니다."></textarea>
+                </div>
+
+                <div class="form-group">
                     <label>영상 형식 <span class="req">*</span></label>
                     <div class="format-toggle">
                         <input type="radio" name="format" value="롱폼" id="fmtLong" checked>
@@ -234,6 +252,34 @@
         const form = document.getElementById('genForm');
         const btn = document.getElementById('submitBtn');
         const result = document.getElementById('result');
+
+        // 생성 모드에 따라 '검토된 기획안' 입력칸 표시/필수 전환
+        function syncModeUI() {
+            const mode = form.elements['mode'].value;
+            const show = mode === '대본만';
+            document.getElementById('planGroup').style.display = show ? '' : 'none';
+            document.getElementById('planBox').required = show;
+        }
+        for (const r of form.querySelectorAll('input[name="mode"]')) r.addEventListener('change', syncModeUI);
+
+        // URL 파라미터로 폼 자동 입력 (키워드 뷰어·주간 메일의 '기획안 만들기' 링크용)
+        // 예: script-generator.html?topic=임플란트 재수술&field=치과&mode=기획안만&notes=반복질문...
+        (function prefillFromUrl() {
+            const params = new URLSearchParams(location.search);
+            const fields = ['channel', 'field', 'topic', 'target', 'length', 'tone', 'notes', 'examples', 'email', 'plan'];
+            for (const name of fields) {
+                const v = params.get(name);
+                if (v && form.elements[name]) form.elements[name].value = v;
+            }
+            for (const radioName of ['mode', 'format']) {
+                const v = params.get(radioName);
+                if (v) {
+                    const radio = form.querySelector(`input[name="${radioName}"][value="${v}"]`);
+                    if (radio) radio.checked = true;
+                }
+            }
+            syncModeUI();
+        })();
 
         // hooks.js(HOOK_NOTES)가 있으면 [섹션]별로 파싱해 프리셋 드롭다운을 채운다
         (function initPresets() {

@@ -309,11 +309,18 @@
                 <div class="keyword-tag" onclick="quickAnalyze('여드름')">여드름</div>
                 <div class="keyword-tag" onclick="quickAnalyze('무릎통증')">무릎통증</div>
                 <div class="keyword-tag" onclick="quickAnalyze('저속노화')">저속노화</div>
+                <div class="keyword-tag" onclick="quickAnalyze('실리프팅')">실리프팅</div>
+                <div class="keyword-tag" onclick="quickAnalyze('맞춤가구')">맞춤가구</div>
+                <div class="keyword-tag" onclick="quickAnalyze('암관리')">암관리</div>
             </div>
         </div>
 
         <div class="chart-container">
             <div id="main"></div>
+            <div id="planCta" style="display:none; padding:16px 30px; background:#eef1ff; border-top:1px solid #dfe3ff; text-align:center;">
+                <span id="planCtaText" style="font-weight:600; color:#444; margin-right:12px;"></span>
+                <a id="planCtaLink" href="#" target="_blank" style="display:inline-block; padding:10px 22px; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:white; border-radius:10px; font-weight:700; text-decoration:none;">🎬 이 키워드로 기획안 만들기</a>
+            </div>
             <div class="legend" id="legend"></div>
         </div>
 
@@ -388,7 +395,41 @@
                 '부작용/주의': ['부작용', '주의사항', '위험', '금기'],
                 '정보/개념': ['이란', '뜻', '의미', '개념', '정의'],
                 '병원/제품': ['병원', '추천', '제품', '영양제', '화장품', '프로그램']
+            },
+            '실리프팅': {
+                '비용/가격': ['가격', '비용', '이벤트', '개수별가격', '유지비용'],
+                '치료방법': ['민트실', '녹는실', '울쎄라비교', '리프팅종류', '재시술'],
+                '증상확인': ['처짐', '팔자주름', '이중턱', '탄력저하', '얼굴라인'],
+                '병원선택': ['잘하는곳', '추천', '후기', '유명한피부과', '전문의'],
+                '부작용/주의': ['부작용', '멍', '붓기기간', '실패사례', '비대칭'],
+                '회복/예후': ['유지기간', '효과시기', '관리방법', '재시술주기']
+            },
+            '맞춤가구': {
+                '비용/가격': ['가격', '견적', '평당가격', '붙박이장가격', '비교견적'],
+                '종류/재료': ['원목', '필름', 'PET', 'LPM', '도장', '소재비교'],
+                '시공과정': ['제작기간', '시공기간', '실측', '설치과정', 'AS'],
+                '업체선택': ['잘하는곳', '추천', '후기', '사제vs브랜드', '공장직영'],
+                '디자인': ['붙박이장', '수납장', '팬트리', '드레스룸', '아일랜드장'],
+                '주의사항': ['하자', '뒤틀림', '마감불량', '계약주의', '추가비용']
+            },
+            '암관리': {
+                '정보/개념': ['병기', '생존율정보', '검사종류', '재발지표', '용어정리'],
+                '치료과정': ['항암치료과정', '방사선치료', '수술후관리', '통원치료', '병행요법'],
+                '부작용관리': ['항암부작용', '구토관리', '탈모', '식욕부진', '손발저림'],
+                '식단/영양': ['암환자식단', '단백질섭취', '먹으면좋은음식', '피해야할음식', '영양제'],
+                '일상관리': ['운동', '수면', '멘탈관리', '가족돌봄', '직장복귀'],
+                '병원선택': ['요양병원', '한방병행', '2차소견', '전문센터', '재활프로그램']
             }
+        };
+
+        // 키워드 → 업종 매핑 (기획안 생성기 폼 자동 입력용)
+        const keywordIndustry = {
+            '허리디스크': '정형외과', '무릎통증': '정형외과',
+            '임플란트': '치과',
+            '쌍꺼풀': '성형외과',
+            '여드름': '피부과', '실리프팅': '피부과', '저속노화': '피부과',
+            '맞춤가구': '인테리어(맞춤가구)',
+            '암관리': '암'
         };
 
         // 카테고리별 색상 매핑
@@ -645,6 +686,20 @@
             document.getElementById('keywordInput').value = keyword;
             analyzeKeyword();
         }
+
+        // 키워드 노드 클릭 → 기획안 생성기 폼으로 연결 (주제·업종·기획안만 모드 자동 입력)
+        myChart.on('click', function (params) {
+            if (params.dataType !== 'node') return;
+            const center = document.getElementById('keywordInput').value.trim();
+            const topic = (params.data.name === center) ? center : center + ' ' + params.data.name;
+            const field = keywordIndustry[center] || '';
+            const url = 'script-generator.html?' + new URLSearchParams({
+                topic: topic, field: field, mode: '기획안만'
+            }).toString();
+            document.getElementById('planCtaText').textContent = '선택한 주제: 「' + topic + '」';
+            document.getElementById('planCtaLink').href = url;
+            document.getElementById('planCta').style.display = 'block';
+        });
 
         // 초기 실행
         document.getElementById('keywordInput').value = "허리디스크";
