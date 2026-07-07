@@ -25,6 +25,16 @@
                     { "name": "Access-Control-Allow-Origin", "value": "*" }
                 ]
             },
+            "onerror": [
+                {
+                    "id": 7,
+                    "module": "builtin:Resume",
+                    "version": 1,
+                    "parameters": {},
+                    "mapper": {},
+                    "metadata": { "designer": { "x": 300, "y": 300 } }
+                }
+            ],
             "metadata": { "designer": { "x": 300, "y": 0 } }
         },
         {
