@@ -1,0 +1,34 @@
+name: 주제 채굴 — 주간 배달
+
+on:
+  workflow_dispatch:        # 수동 실행 버튼
+  schedule:
+    - cron: "0 22 * * 0"    # UTC 일요일 22:00 = KST 월요일 07:00
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 시크릿 설정 확인
+        run: |
+          if [ -z "${{ secrets.GMAIL_APP_PASSWORD }}" ]; then
+            echo "::warning::GitHub Secrets 미설정 — 배달을 건너뜁니다. topic-miner/README.md의 최초 설정을 완료하세요."
+            echo "SKIP=1" >> "$GITHUB_ENV"
+          fi
+      - name: 의존성 설치
+        if: env.SKIP != '1'
+        run: pip install -r topic-miner/requirements.txt
+      - name: 지난 7일 상위 20개 이메일 배달
+        if: env.SKIP != '1'
+        env:
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_SENDER: ekrk5614@gmail.com
+          DIGEST_TO: ${{ secrets.DIGEST_TO }}
+          PAGES_BASE_URL: https://kanghyeonjoon.github.io/keywordmaster
+        run: python topic-miner/src/weekly_digest.py

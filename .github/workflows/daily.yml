@@ -1,0 +1,34 @@
+name: 주제 채굴 — 매일 수집
+
+on:
+  workflow_dispatch:        # 수동 실행 버튼
+  schedule:
+    - cron: "0 21 * * *"    # UTC 21:00 = KST 06:00
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 시크릿 설정 확인
+        run: |
+          if [ -z "${{ secrets.YOUTUBE_API_KEY }}" ]; then
+            echo "::warning::GitHub Secrets 미설정 — 수집을 건너뜁니다. topic-miner/README.md의 최초 설정을 완료하세요."
+            echo "SKIP=1" >> "$GITHUB_ENV"
+          fi
+      - name: 의존성 설치
+        if: env.SKIP != '1'
+        run: pip install -r topic-miner/requirements.txt
+      - name: 수집 → 등급화 → 채점 → 금고 적립
+        if: env.SKIP != '1'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+        run: python topic-miner/src/daily_collect.py
