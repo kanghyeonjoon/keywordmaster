@@ -124,7 +124,7 @@
 
         <div class="tabs" id="tabs"></div>
         <div class="controls">
-            <button class="scope-btn active" id="scopeRecent">🕐 최근 14일</button>
+            <button class="scope-btn active" id="scopeRecent">🕐 이번 주</button>
             <button class="scope-btn" id="scopeArchive">📦 지난 화제성 아카이브</button>
             <button class="scope-btn" id="refreshBtn">🔄 새로고침</button>
         </div>
@@ -194,7 +194,7 @@
             if (!topics.length) {
                 empty.style.display = '';
                 empty.innerHTML = scope === 'archive'
-                    ? '아카이브가 아직 비어 있습니다.<br>수집한 지 14일이 지난 주제 중 <b>명당·화제성 S/A</b>만 여기에 보관됩니다.<br>금고가 쌓이면 자동으로 채워져요.'
+                    ? '아카이브가 아직 비어 있습니다.<br>매주 <b>월요일</b>에 지난주 주제 중 <b>명당·화제성 S/A</b>만 여기로 넘어와 쌓입니다.'
                     : '아직 데이터가 없습니다.<br>매일 09:00 수집 후 자동으로 채워집니다.';
                 return;
             }

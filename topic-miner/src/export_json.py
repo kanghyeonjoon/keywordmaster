@@ -1,8 +1,9 @@
 """트렌드 대시보드용 데이터 발행.
 
 금고(시트) 전체를 읽어 data/vault.json으로 저장한다.
-- topics: 최근 14일 (대시보드 기본 화면)
-- archive: 14일이 지난 것 중 가치가 남은 주제만 보관 (명당 또는 화제성 S/A)
+- topics: 이번 주 (이번 주 월요일 이후 수집분 — 대시보드 기본 화면)
+- archive: 지난주까지 수집분 중 가치가 남은 주제만 보관 (명당 또는 화제성 S/A)
+  → 매주 월요일 아침 수집 때 지난주 명당들이 아카이브로 넘어간다
 daily.yml이 수집 직후 실행해 리포에 커밋 → GitHub Pages가 서빙 →
 trends.html이 같은 출처(same-origin)에서 읽으므로 시트 공개가 필요 없다.
 --dry-run: 시트 대신 dry_run_vault.csv 사용.
@@ -26,9 +27,13 @@ INDUSTRY_LABEL = {
     "construction": "건설분쟁",
 }
 
-RECENT_DAYS = 14        # 기본 화면에 보여줄 기간
 ARCHIVE_MAX = 200       # 아카이브 보관 상한 (파일 크기 방어)
 VALUABLE_BUZZ = {"S", "A"}  # 아카이브에 남길 화제성 등급
+
+
+def _this_monday(today: "dt.date") -> str:
+    """이번 주 월요일 날짜 (월요일이면 오늘) — 아카이브 경계."""
+    return (today - dt.timedelta(days=today.weekday())).isoformat()
 
 
 def _parse_json_field(value, default):
@@ -67,8 +72,8 @@ def build(rows: list[dict]) -> dict:
         t.pop("_idx", None)
         unique.append(t)
 
-    # 최근 14일은 그대로, 그보다 오래된 것은 가치가 남은 주제만 아카이브로
-    cutoff = (dt.date.today() - dt.timedelta(days=RECENT_DAYS)).isoformat()
+    # 이번 주(월요일 이후)는 그대로, 지난주까지는 가치가 남은 주제만 아카이브로
+    cutoff = _this_monday(dt.date.today())
     recent = [t for t in unique if t["date"] >= cutoff]
     archive = [t for t in unique
                if t["date"] < cutoff
