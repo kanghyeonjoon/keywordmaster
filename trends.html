@@ -169,7 +169,7 @@
 
             if (!topics.length) {
                 empty.style.display = '';
-                empty.innerHTML = '아직 데이터가 없습니다.<br>매일 06:00 수집 후 자동으로 채워집니다.';
+                empty.innerHTML = '아직 데이터가 없습니다.<br>매일 09:00 수집 후 자동으로 채워집니다.';
                 return;
             }
             empty.style.display = 'none';
@@ -225,7 +225,7 @@
             .catch(() => {
                 document.getElementById('empty').style.display = '';
                 document.getElementById('empty').innerHTML =
-                    '데이터 파일(data/vault.json)이 아직 없습니다.<br>다음 자동 수집(매일 06:00) 후 이 화면이 채워집니다.';
+                    '데이터 파일(data/vault.json)이 아직 없습니다.<br>다음 자동 수집(매일 09:00) 후 이 화면이 채워집니다.';
             });
     </script>
 </body>
