@@ -44,7 +44,22 @@
         }
         .tab.active { background: #2C3E50; color: white; }
 
+        .controls { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+        .scope-btn {
+            padding: 8px 16px; border-radius: 12px; cursor: pointer;
+            font-family: 'Pretendard', sans-serif; font-size: 13.5px; font-weight: 700;
+            background: rgba(255,255,255,0.18); color: white; border: 1px solid rgba(255,255,255,0.4);
+        }
+        .scope-btn.active { background: white; color: #5a4b9e; }
+
         .meta { text-align: center; color: rgba(255,255,255,0.85); font-size: 13px; margin-bottom: 18px; }
+
+        .more-btn {
+            grid-column: 1 / -1; padding: 14px; border-radius: 14px; border: none; cursor: pointer;
+            font-family: 'Pretendard', sans-serif; font-size: 15px; font-weight: 700;
+            background: rgba(255,255,255,0.92); color: #5a4b9e;
+        }
+        .more-btn:hover { background: white; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px; }
 
@@ -108,6 +123,11 @@
         </nav>
 
         <div class="tabs" id="tabs"></div>
+        <div class="controls">
+            <button class="scope-btn active" id="scopeRecent">🕐 최근 14일</button>
+            <button class="scope-btn" id="scopeArchive">📦 지난 화제성 아카이브</button>
+            <button class="scope-btn" id="refreshBtn">🔄 새로고침</button>
+        </div>
         <div class="meta" id="meta"></div>
         <div class="grid" id="grid"></div>
         <div class="empty" id="empty" style="display:none"></div>
@@ -118,6 +138,9 @@
         const FIELD_NAME = { dental: '치과', derma: '피부과', interior: '인테리어(맞춤가구)', cancer: '암', construction: '건설분쟁 전문 변호사' };
         let DATA = null;
         let current = 'all';
+        let scope = 'recent';   // 'recent' = 최근 14일 | 'archive' = 지난 화제성 보관함
+        const PAGE = 12;        // 한 번에 보여줄 카드 수 ("더 보기"로 추가 로드)
+        let shown = PAGE;
 
         function fmtViews(n) {
             if (n >= 10000) return (n / 10000).toFixed(n >= 100000 ? 0 : 1) + '만회';
@@ -163,18 +186,21 @@
             const grid = document.getElementById('grid');
             const empty = document.getElementById('empty');
             grid.innerHTML = '';
-            const topics = (DATA.topics || [])
+            const source = scope === 'recent' ? (DATA.topics || []) : (DATA.archive || []);
+            const topics = source
                 .filter(t => current === 'all' || t.industry === current)
                 .sort((a, b) => (b.is_sweetspot - a.is_sweetspot) || (b.score - a.score));
 
             if (!topics.length) {
                 empty.style.display = '';
-                empty.innerHTML = '아직 데이터가 없습니다.<br>매일 09:00 수집 후 자동으로 채워집니다.';
+                empty.innerHTML = scope === 'archive'
+                    ? '아카이브가 아직 비어 있습니다.<br>수집한 지 14일이 지난 주제 중 <b>명당·화제성 S/A</b>만 여기에 보관됩니다.<br>금고가 쌓이면 자동으로 채워져요.'
+                    : '아직 데이터가 없습니다.<br>매일 09:00 수집 후 자동으로 채워집니다.';
                 return;
             }
             empty.style.display = 'none';
 
-            for (const t of topics) {
+            for (const t of topics.slice(0, shown)) {
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.innerHTML = `
@@ -183,11 +209,12 @@
                         ${t.is_sweetspot ? '<span class="badge spot">🎯 명당</span>' : ''}
                         <span class="badge">화제성 ${t.buzz_grade}</span>
                         <span class="badge">파워 ${t.power_grade}</span>
+                        ${scope === 'archive' && t.date ? `<span class="badge">📅 ${t.date}</span>` : ''}
                         <span class="score">${t.score}점 · ${INDUSTRIES[t.industry] || t.industry}</span>
                     </div>
                     <div class="reason"></div>
                     <div class="questions"></div>
-                    <div class="spark-wrap"><div class="spark-title">검색 추세 (최근 13주 · 상대비율)</div>${sparkline(t.trend)}</div>
+                    <div class="spark-wrap"><div class="spark-title">검색 추세 (${scope === 'archive' ? '수집 당시' : '최근'} 13주 · 상대비율)</div>${sparkline(t.trend)}</div>
                     <div class="videos"></div>
                     <a class="plan-btn" href="${planLink(t)}" target="_blank">🎬 이 주제로 기획안 만들기</a>`;
                 card.querySelector('.kw').textContent = t.keyword;
@@ -200,6 +227,14 @@
                 }
                 grid.appendChild(card);
             }
+
+            if (topics.length > shown) {
+                const more = document.createElement('button');
+                more.className = 'more-btn';
+                more.textContent = `▼ 더 보기 (${topics.length - shown}개 남음)`;
+                more.onclick = () => { shown += PAGE; render(); };
+                grid.appendChild(more);
+            }
         }
 
         function renderTabs() {
@@ -209,24 +244,50 @@
                 const b = document.createElement('button');
                 b.className = 'tab' + (code === current ? ' active' : '');
                 b.textContent = label;
-                b.onclick = () => { current = code; renderTabs(); render(); };
+                b.onclick = () => { current = code; shown = PAGE; renderTabs(); render(); };
                 tabs.appendChild(b);
             }
         }
 
-        fetch('data/vault.json?t=' + Date.now())
-            .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-            .then(d => {
-                DATA = d;
-                document.getElementById('meta').textContent = '마지막 갱신: ' + (d.generated_at || '-') + ' · 최근 14일 · 명당 우선 정렬';
-                renderTabs();
-                render();
-            })
-            .catch(() => {
-                document.getElementById('empty').style.display = '';
-                document.getElementById('empty').innerHTML =
-                    '데이터 파일(data/vault.json)이 아직 없습니다.<br>다음 자동 수집(매일 09:00) 후 이 화면이 채워집니다.';
-            });
+        function setScope(next) {
+            scope = next;
+            shown = PAGE;
+            document.getElementById('scopeRecent').classList.toggle('active', scope === 'recent');
+            document.getElementById('scopeArchive').classList.toggle('active', scope === 'archive');
+            if (DATA) render();
+        }
+
+        function updateMeta() {
+            const archiveN = (DATA.archive || []).length;
+            document.getElementById('meta').textContent =
+                '마지막 갱신: ' + (DATA.generated_at || '-') +
+                ' · 매일 09:00 자동 수집 · 명당 우선 정렬' +
+                (archiveN ? ` · 아카이브 ${archiveN}개 보관 중` : '');
+        }
+
+        function loadData() {
+            document.getElementById('meta').textContent = '⏳ 데이터 불러오는 중…';
+            return fetch('data/vault.json?t=' + Date.now())
+                .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+                .then(d => {
+                    DATA = d;
+                    updateMeta();
+                    renderTabs();
+                    render();
+                })
+                .catch(() => {
+                    document.getElementById('meta').textContent = '';
+                    document.getElementById('empty').style.display = '';
+                    document.getElementById('empty').innerHTML =
+                        '데이터 파일(data/vault.json)이 아직 없습니다.<br>다음 자동 수집(매일 09:00) 후 이 화면이 채워집니다.';
+                });
+        }
+
+        document.getElementById('scopeRecent').onclick = () => setScope('recent');
+        document.getElementById('scopeArchive').onclick = () => setScope('archive');
+        document.getElementById('refreshBtn').onclick = () => loadData();
+
+        loadData();
     </script>
 </body>
 </html>
