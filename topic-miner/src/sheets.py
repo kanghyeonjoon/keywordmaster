@@ -60,3 +60,8 @@ def fetch_last_days(days: int = 7) -> list[dict]:
     records = ws.get_all_records()
     cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     return [r for r in records if str(r.get("date", "")) >= cutoff]
+
+
+def fetch_all() -> list[dict]:
+    """금고 전체 행을 반환 (대시보드 발행용 — 아카이브 포함)."""
+    return _worksheet().get_all_records()

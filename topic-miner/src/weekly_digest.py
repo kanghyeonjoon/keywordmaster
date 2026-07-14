@@ -14,7 +14,7 @@ import mailer  # noqa: E402
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOP_N = 5
-INDUSTRY_ORDER = ["dental", "derma", "interior", "cancer"]
+INDUSTRY_ORDER = ["dental", "derma", "interior", "cancer", "construction"]
 
 
 def pick_top(rows: list[dict]) -> dict[str, list[dict]]:

@@ -1,0 +1,29 @@
+name: 기획안·대본 테스트 발송
+
+# 실행 방법 (2가지):
+#   1. GitHub → Actions 탭 → "기획안·대본 테스트 발송" → Run workflow 버튼
+#   2. .github/webhook-test-trigger 파일을 수정해서 커밋
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/webhook-test-trigger'
+
+jobs:
+  send-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make 웹훅으로 테스트 데이터 전송
+        run: |
+          curl -sS -X POST 'https://hook.eu2.make.com/vg89iv826vj2majdemywlw75rwgo343v' \
+            --data-urlencode 'channel=테스트채널' \
+            --data-urlencode 'field=재테크' \
+            --data-urlencode 'format=숏폼' \
+            --data-urlencode 'topic=사회초년생 월급 관리 3가지 원칙' \
+            --data-urlencode 'target=2030 직장인' \
+            --data-urlencode 'length=60초' \
+            --data-urlencode 'tone=친근한 존댓말' \
+            --data-urlencode 'notes=GitHub Actions 자동 테스트 발송입니다' \
+            --data-urlencode 'examples=이거 모르면 월급 300 그냥 버리는 겁니다 | 제가 3년간 1000명을 상담하며 알게 된 사실인데요' \
+            --data-urlencode 'email=ekrk5614@gmail.com' \
+            -w '\nHTTP %{http_code}\n'
